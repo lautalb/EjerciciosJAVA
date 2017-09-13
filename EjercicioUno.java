@@ -24,32 +24,7 @@ public class EjercicioUno {
      */
     public static void main(String[] args) {
         // se declaran variables de tipo Entero.
-        int numeroUno;
-        int numeroDos;
-        int suma;
-        // se crea el scanner que se va a usar.
-            Scanner misca = new Scanner(System.in);
-            
-        
-            System.out.println("Esto sirve de maravilla.");
-            
-            
-        //se pide le primer numero.
-            System.out.println("Ingrese dos numeros a sumar: ");
-            //se guarda en la variable y se muestra para verificar el mismo.
-            numeroUno = misca.nextInt();
-            System.out.println("numero ingresado:  "+numeroUno);
-            //Se pide el segundo numero.
-            System.out.println("Ingrese el segundo numero a sumar: ");
-            //Se guarda en la variable y se muestra para verificar el mismo.
-            numeroDos = misca.nextInt();
-            System.out.println("Numero ingresado : "+numeroDos);
-           //se suman las variables asignandola a la variable Suma.
-            suma=numeroUno+numeroDos;
-            //Se muestra el resultado.
-            System.out.println("El resultado de la suma es : "+suma);
-        
-        
+        System.out.println("Esto sirve de maravilla.");
         
     }
     
