@@ -31,6 +31,9 @@ public class EjercicioUno {
             Scanner misca = new Scanner(System.in);
             
         
+            System.out.println("Esto sirve de maravilla.");
+            
+            
         //se pide le primer numero.
             System.out.println("Ingrese dos numeros a sumar: ");
             //se guarda en la variable y se muestra para verificar el mismo.
