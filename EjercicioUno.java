@@ -15,6 +15,12 @@ public class EjercicioUno {
 
     /**
      * @param args the command line arguments
+     * Se debe mostrar el siguiente mensaje : 
+     * esto funciona de maravilla
+     * 
+     * 
+     * 
+     * 
      */
     public static void main(String[] args) {
         // se declaran variables de tipo Entero.
