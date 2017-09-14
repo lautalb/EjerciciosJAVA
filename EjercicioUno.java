@@ -24,7 +24,7 @@ public class EjercicioUno {
      */
     public static void main(String[] args) {
         // se declaran variables de tipo Entero.
-        System.out.println("Esto sirve de maravilla.");
+        System.out.println("Esto funciona de maravilla.");
         
     }
     
