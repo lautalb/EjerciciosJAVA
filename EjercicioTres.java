@@ -5,6 +5,8 @@
  */
 package ejerciciotres;
 
+import java.util.Scanner;
+
 /**
  *
  * @author alumno
@@ -17,7 +19,20 @@ public class EjercicioTres {
      * su nombre es xxxx y xxxxx es su apellido
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        // se declaran las variables.
+        String nombre;
+        String apellido;
+        //se importa y crea el scanner para usarlo.
+        Scanner miscanner= new Scanner(System.in);
+        //se pide el nombre y apellido.
+        System.out.println("Ingrese su nombre y despues su apellido");
+        //se guarda lo ingresado en la variable del tipo string (nombre) y (apellido).
+        nombre = miscanner.nextLine();
+        apellido = miscanner.nextLine();
+        
+        //se muestra el nombre y apellido ingresado.
+        System.out.println("Su nombre es: "+nombre+" y "+apellido+" es su apellido.");
+        
         
         
     }
