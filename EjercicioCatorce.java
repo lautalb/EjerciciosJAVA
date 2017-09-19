@@ -41,7 +41,10 @@ public class EjercicioCatorce {
             System.out.println("Clave erronea");
         }
         
-        
+        //15- se ingresa un importe, si supera los 100$ se le suma un 23%, si es menor a 100$ se 
+        //le descuenta el 50%.
+        //16- se ingresa el importe de un pasaje de avion y el mes de viaje, si es enero se le descuenta
+        // un 10% por temporada baja,
         
     }
     
