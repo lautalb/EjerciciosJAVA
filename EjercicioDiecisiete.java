@@ -29,7 +29,7 @@ public class EjercicioDiecisiete {
         System.out.println("Ingrese edad : ");
         datoAux=miscan.next();
         edad=Integer.parseInt(datoAux);
-//        //hacemos la condicion
+//        //hacemos la condiciona
 //        if (edad<13 )
 //        {
 //            System.out.println("niño");
