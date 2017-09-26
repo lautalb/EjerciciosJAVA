@@ -16,6 +16,13 @@ public class AdivinaElNumero {
 
     /**
      * @param args the command line arguments
+     * agregar : informar si : 
+     * a: si le erro por 1 punto mensaje "Casi casi"
+     * b:si le erro por 2 puntos mensaje "Cerca"
+     * c:si le erro por 3 puntos mensaje "ni cerca"
+     * d: si le erro por 4 puntos "bien lejos"
+     * f:para todos los demas "sos horrible en este juego ".
+     * 
      */
     public static void main(String[] args) {
         
