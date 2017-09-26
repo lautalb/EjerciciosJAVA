@@ -37,18 +37,18 @@ public class EjercicioQuince {
         if (importe >100)
         {
             //se hace el calculo del % y se le suma el importe
-            AumentoODescuento = importe*23/100;
-            total = importe+AumentoODescuento;
+          
+            total = importe*1.23;//1=al total del importe y 23 = el porcentaje.
             
             //se muestra el mensaje
-            System.out.println("El aumento es: "+AumentoODescuento+"$. El total : "+total+"$." );
+            System.out.println("El total : "+total+"$." );
         }
-        if (importe < 100)
+        else
         {
             //se hace el calculo del % y se calcula el total
-            AumentoODescuento = importe*50/100;
-            total = importe-AumentoODescuento;
-            System.out.println("El descuento es :"+AumentoODescuento+"$. El total :"+total+"$.");
+            
+            total = importe*0.50; // se hace el descuento.
+            System.out.println(" El total :"+total+"$.");
         }
         
         
