@@ -28,6 +28,8 @@ public class AdivinaElNumero {
         //para generar el numero random  el +1 para que empieze del 1 y el *10 para 10 numeros
         numeroSecreto = (int) (Math.random()* 10)+1; 
         
+        
+        //para verificar el numeroSecreto System.out.println("el numero random es : "+numeroSecreto);
         System.out.println("Adivina el numero entre el 1 y el 10");
         datoAux = miscan.next();
         numero = Integer.parseInt(datoAux);
@@ -35,9 +37,17 @@ public class AdivinaElNumero {
         if (numeroSecreto==numero)
         {
             System.out.println("Acertaste");
-        }else{
+        }else
+        {
         
             System.out.println("Numero Incorrecto.");
+            if(numero>numeroSecreto)
+            {
+                System.out.println("te pasaste");
+            }else
+            {
+                System.out.println("te falto");
+            }
         }
            
         
