@@ -42,47 +42,49 @@ public class AdivinaElNumero {
         datoAux = miscan.next();
         numero = Integer.parseInt(datoAux);
         
-        
+        //creamos la bifurcacion 
         if (numero==numeroSecreto)
-        {
+        {   //si numero ingresado es igual al numero ramdon
            System.out.println("Acertaste");
-            
+            //si no, que haga la resta
         }else
         { 
             resultado=numeroSecreto-numero;
-            
+            //si la resta dio numero negativo entra al if e invierte la resta
             if (resultado<0)
             {
                 resultado=numero-numeroSecreto;
             
-            }
+            }//fin del if
         
             switch (resultado)
         {
+                //si quedo a 1 numero de adivinar
             case 1:
                 System.out.println("Casi Casi");
                 break;
-            
+            //si quedo a 2 numeros de adivinar
             case 2:
                 System.out.println("Cerca");
                 break;
-                
+                //si quedo a 3 numeros de adivinar
             case 3:
                 System.out.println("Ni cerca");
                 break;
-            
+            //si quedo a 4 numeros de adivinar
             case 4:
                 System.out.println("Bien lejos");
                 break;
             
             default:
+                //si quedo a 5 o mas numeros de adivinar
                 System.out.println("Sos horrible en este juego");
                 break;
         
         
         
-        }
-        }
+        }//fin del switch
+        }//fin del else
         
         
         
