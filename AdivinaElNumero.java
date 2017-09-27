@@ -42,13 +42,22 @@ public class AdivinaElNumero {
         datoAux = miscan.next();
         numero = Integer.parseInt(datoAux);
         
-        resultado=numeroSecreto-numero;
-        if (resultado<0)
-        {
-            resultado=numero-numeroSecreto;
-        }
         
-        switch (resultado)
+        if (numero==numeroSecreto)
+        {
+           System.out.println("Acertaste");
+            
+        }else
+        { 
+            resultado=numeroSecreto-numero;
+            
+            if (resultado<0)
+            {
+                resultado=numero-numeroSecreto;
+            
+            }
+        
+            switch (resultado)
         {
             case 1:
                 System.out.println("Casi Casi");
@@ -73,6 +82,9 @@ public class AdivinaElNumero {
         
         
         }
+        }
+        
+        
         
         
         
