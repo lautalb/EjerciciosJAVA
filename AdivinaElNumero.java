@@ -51,17 +51,21 @@ public class AdivinaElNumero {
             if(numero>numeroSecreto)
             {
                 System.out.println("te pasaste");
-                resultado=numero-numeroSecreto;
+                
             }else
             {
                 System.out.println("te falto");
-              resultado=numero-numeroSecreto;
-              resultado=Math.abs(resultado);
               
-            } 
+              
+            }
+            resultado=numero-numeroSecreto;
+           //variable=el math.abs(variable) sirve para devolver el valor absoluto. Ej si el resultado es -1 te devuelve 1.
+            resultado=Math.abs(resultado);
+            
            switch (resultado)
         {
                 //si quedo a 1 numero de adivinar
+            // se puede poner case -1: para no usar el resultado=Math.abs(resultado);
             case 1:
                 System.out.println("Casi Casi");
                 break;
