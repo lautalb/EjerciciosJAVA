@@ -32,30 +32,69 @@ public class AdivinaElNumero {
         Integer numero;
         Scanner miscan= new Scanner(System.in);
         Integer numeroSecreto;
+        Integer resultado;
         //para generar el numero random  el +1 para que empieze del 1 y el *10 para 10 numeros
         numeroSecreto = (int) (Math.random()* 10)+1; 
         
         
-        //para verificar el numeroSecreto System.out.println("el numero random es : "+numeroSecreto);
+        System.out.println("el numero random es : "+numeroSecreto);
         System.out.println("Adivina el numero entre el 1 y el 10");
         datoAux = miscan.next();
         numero = Integer.parseInt(datoAux);
         
-        if (numeroSecreto==numero)
+        resultado=numeroSecreto-numero;
+        if (resultado<0)
         {
-            System.out.println("Acertaste");
-        }else
-        {
-        
-            System.out.println("Numero Incorrecto.");
-            if(numero>numeroSecreto)
-            {
-                System.out.println("te pasaste");
-            }else
-            {
-                System.out.println("te falto");
-            }
+            resultado=numero-numeroSecreto;
         }
+        
+        switch (resultado)
+        {
+            case 1:
+                System.out.println("Casi Casi");
+                break;
+            
+            case 2:
+                System.out.println("Cerca");
+                break;
+                
+            case 3:
+                System.out.println("Ni cerca");
+                break;
+            
+            case 4:
+                System.out.println("Bien lejos");
+                break;
+            
+            default:
+                System.out.println("Sos horrible en este juego");
+                break;
+        
+        
+        
+        }
+        
+        
+        
+        
+        
+        
+        
+//        if (numeroSecreto==numero)
+//        {
+//            System.out.println("Acertaste");
+//        }else
+//        {
+//        
+//            System.out.println("Numero Incorrecto.");
+//            if(numero>numeroSecreto)
+//            {
+//                System.out.println("te pasaste");
+//            }else
+//            {
+//                System.out.println("te falto");
+//            }
+//        }
            
         
         /***la otra forma es usando
@@ -64,7 +103,6 @@ public class AdivinaElNumero {
         // Producir nuevo int aleatorio entre 0 y 99
             int intAletorio = aleatorio.nextInt(100);
         // Más código
-
          // Refrescar datos aleatorios 
             aleatorio.setSeed(System.currentTimeMillis());
          * 
