@@ -24,7 +24,6 @@ C. Si compra 4 lamparitas bajo consumo marca "ArgentinaLuz" o “FelipeLamparas�
 D. Si compra 3 lamparitas bajo consumo marca "ArgentinaLuz" el descuento es del 15%, si es “FelipeLamparas” se hace un descuento del 10 % y si es de otra marca un 5%. 
 E. Si el importe final con descuento suma más de $120 se debe sumar un 10% de ingresos brutos en informar del impuesto con el siguiente mensaje:”IIBB Usted pago X”, 
 * siendo X el impuesto que se pagó.
-
      */
     public static void main(String[] args) {
          //declaramos las variables e importamos el scanner a utilizar
@@ -107,7 +106,22 @@ E. Si el importe final con descuento suma más de $120 se debe sumar un 10% de i
             default:
                 
                 precioTotal=cantidadDeLamparitas*precioDeLamparita*0.50;
-                System.out.println("debe pagar: "+precioTotal+"$.");
+                
+                
+                if (precioTotal<120)
+                {
+                    
+                    System.out.println("debe pagar: "+precioTotal+"$.");
+                
+                }else
+                    {
+                    precioTotal=cantidadDeLamparitas*precioDeLamparita*0.50;
+                    impuesto=cantidadDeLamparitas*precioDeLamparita*0.10;
+                    ingresoBrutoTotal=precioTotal+impuesto;
+                    
+                    System.out.println("IIBB usted pago: "+ingresoBrutoTotal+"$, siendo "+impuesto+"$ el impuesto que se pagó.");
+                     }  
+                
                 break;
         
         }
