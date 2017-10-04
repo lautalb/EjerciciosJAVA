@@ -85,7 +85,27 @@ public class Examen {
                 
             case 29:
                 GuiaSwitch.HacerEjercicio29();
-                break;    
+                break;   
+                
+            case 30:
+                GuiaSwitch.HacerEjercicio30();
+                break;
+                
+            case 31:
+                GuiaSwitch.HacerEjercicio31();
+                break;
+                
+            case 32:
+                GuiaSwitch.HacerEjercicio32();
+                break;
+            
+            case 33:
+                GuiaSwitch.HacerEjercicio33();
+                break;
+            
+            case 34:
+                GuiaSwitch.HacerEjercicio34();
+                break;
                 
         }
 
@@ -96,5 +116,3 @@ public class Examen {
     }
     
 }
-
-
