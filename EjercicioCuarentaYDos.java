@@ -26,16 +26,13 @@ public class EjercicioCuarentaYDos {
         String color;
         Integer rojo=0;
         Integer azul=0;
+        String continuar="si";
         Integer contador=0;
         
-        //mostramos mensaje y pedimos datos
-        System.out.println("Ingrese cantidad de vehiculos");
-        datoAux=miscan.next();
-        vehiculos=Integer.parseInt(datoAux);
         
         //iteramos
-        while(contador<vehiculos)
-        {   //aumenta el contador
+        while(!continuar.equalsIgnoreCase("no"))
+        {   
             contador++;
             
             //mostramos mensaje y pedimos datos
@@ -54,9 +51,12 @@ public class EjercicioCuarentaYDos {
                     azul++;
                 }
             }
+            
+            System.out.println("Hola, desea continuar");
+            continuar=miscan.next();
         }
         //mostramos la cantidad de vehiculos y cuantos hay de color rojo y azul.
-        System.out.println("La cantidad de vehiculos es: "+vehiculos+" la cantidad de color rojo: "+rojo+" y la cantidad de color azul: "+azul);
+        System.out.println("La cantidad de vehiculos es: "+contador+" la cantidad de color rojo: "+rojo+" y la cantidad de color azul: "+azul);
     }
     
 }
