@@ -38,7 +38,7 @@ public class EjercicioCincuentaYDos {
             contador2++;
             if(numero==suma)
                  {
-                     System.out.println("el numero: "+numero+" es primo");
+                     System.out.println("el numero: "+numero+" es perfecto");
                  }
             suma=0;
             numero++;
