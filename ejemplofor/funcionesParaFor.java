@@ -431,4 +431,29 @@ public class funcionesParaFor {
          //System.out.println(cantidadDeDigitos);
      }
      
+     public static void HacerPiramide()
+     {  
+         int cantidadDeFilas=7;
+         for (int contador = 1; contador < cantidadDeFilas; contador++) {
+             for (int contadorLugares = cantidadDeFilas-1; contadorLugares > contador; contadorLugares--) {
+                 System.out.print(" ");
+             }
+             for (int contador2 = 1; contador2 <=(2*contador-1); contador2++) {
+                 System.out.print("x");
+             }
+             System.out.println("");
+         }
+     }
+     
+     public static void mostrarFilas()
+     {
+         int cantidadDeFilas=6;
+         for (int contador = 1; contador < cantidadDeFilas; contador++) {
+                                                 
+             for (int contador2 = 1; contador2 <=contador; contador2++) {
+                 System.out.print(contador2);
+             }
+             System.out.println("");
+         }
+     }
 }
