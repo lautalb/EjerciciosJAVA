@@ -313,21 +313,122 @@ public class funcionesParaFor {
      public static void FibonacciSucesion()
      {
          int numero=1;
-         int suma=1;
-         int anterior=1;
-         int Fibonacci=0;
-         int auxAnterior;
-         for (int contador = 1; contador < 10; contador++) {
-             auxAnterior= Fibonacci;
-             Fibonacci=suma+anterior;
-             anterior=Fibonacci;
-             
-             System.out.println("serie "+Fibonacci);
+         int anterior=0;
+         int Fibonacci=1;
+         int actual=1;
+         
+         
+         for (int contador = 0; contador < 30; contador++) {
+             Fibonacci=anterior+actual;
+             anterior=actual;
+             actual=Fibonacci;
+                     
+             System.out.println("es el: "+Fibonacci);
              
              
          }
      }
      
+     public static void sacaMayor()
+     {
+         int numUno=3;
+         int numDos=6;
+         int numTres=9;
+         
+         
+             //comparamos la primera variable con la segunda y la tercera
+             if(numUno>numDos && numUno>numTres)
+             {  //el mayor es la primera variable
+                 System.out.println("el mayor es: "+numUno);
+                 
+             }else//1
+             {  //comparamos la segunda variable con la primera y tercera
+                 if(numDos>numUno && numDos>numTres)
+                 {  //el mayor es la segunda variable
+                     System.out.println("el mayor es: "+numDos);
+                     
+                     //si no es ninguno de las aneteriores entra aca
+                 }else//2
+                 {  //y el mayor es la tercera variable.
+                     System.out.println("el mayor es: "+numTres);
+                     
+                 }//fin del segundo else
+             }//fin del primer else
+             
+        }
      
+     /**
+      * Recorrer los numeros del 1 al 100.
+      * mostrar en lugar del numero la palabra "UTN" para todos los multiplos de 3(tres)
+      * mostrar en lugar del numero la palabra "FRA" para todos los multiplos de 5(cinco)
+      * mostrar la palabra "UTNFRA" para todos los multiplos de 3 y 5.
+      */            
+     public static void recorrerDel1Al100()
+     {  //iteracion de 1 al 100 inclusive.
+         for (int contador = 1; contador <= 100; contador++) {
+             
+             if(contador%3==0 && contador%5==0)
+             {  //si es multiplo de 3 y de 5 muestra este mensaje
+                 System.out.println("UTNFRA");
+             }else//1
+             {
+                 if(contador%5==0)
+                 {  //si es multiplo de 5 muestra este otro
+                     System.out.println("FRA");
+                 }else//2
+                 {
+                     if(contador%3==00)
+                     {  //si es multiplo de 3 muestra este mensaje
+                         System.out.println("UTN");
+                     }else//3
+                     {  //si no es multiplo de 3 y de 5 muestra el numero.
+                         System.out.println(""+contador);
+                     }//fin del 3 else
+
+                 }//fin del 2 else
+                 
+             }//fin del 1 else
+             
+             
+         }
+     }
+     /**
+      * 
+      */
+     public static void numeroAmstrong()
+     {   int numeroIngresado=153;
+         int numero=numeroIngresado;
+         int suma=0;
+         int cantidadDeDigitos=0;
+         if(numero<0)
+         {
+             numero=numero*-1;
+         }
+         while(numero>0)
+         {
+             numero=numero/10;
+             cantidadDeDigitos++;
+         }
+         
+         int digito;
+         int auxNumero=numeroIngresado;
+         while(auxNumero>0)
+         {
+            digito=auxNumero%10;
+            suma=suma+(int)(Math.pow(digito, cantidadDeDigitos));
+            auxNumero=auxNumero/10;
+            //System.out.println("digito: "+digito);
+         }
+         
+         if(suma==numeroIngresado)
+         {
+             System.out.println("es Armstrong");
+         }
+         else
+         {
+             System.out.println("no es...");
+         }
+         //System.out.println(cantidadDeDigitos);
+     }
      
 }

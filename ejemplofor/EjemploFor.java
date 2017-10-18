@@ -16,7 +16,7 @@ public class EjemploFor {
      */
     public static void main(String[] args) {
         
-        funcionesParaFor.FibonacciSucesion();
+        funcionesParaFor.numeroAmstrong();
     }
     
 }
