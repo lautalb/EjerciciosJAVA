@@ -417,7 +417,7 @@ public class funcionesParaFor {
             digito=auxNumero%10;
             suma=suma+(int)(Math.pow(digito, cantidadDeDigitos));
             auxNumero=auxNumero/10;
-            //System.out.println("digito: "+digito);
+            System.out.println("digito: "+digito);
          }
          
          if(suma==numeroIngresado)
@@ -433,7 +433,7 @@ public class funcionesParaFor {
      
      public static void HacerPiramide()
      {  
-         int cantidadDeFilas=7;
+         int cantidadDeFilas=6;
          for (int contador = 1; contador < cantidadDeFilas; contador++) {
              for (int contadorLugares = cantidadDeFilas-1; contadorLugares > contador; contadorLugares--) {
                  System.out.print(" ");
@@ -456,4 +456,191 @@ public class funcionesParaFor {
              System.out.println("");
          }
      }
+     
+     /**
+      * 57-Mostrar si un número es un palíndromo ej: 43543 o el 343 o el 81218.
+      */
+     public static void ejercicioCicuentaYSiete()
+     {
+         
+         int numero=1235;
+         int numeroAux=numero;
+         int digitos;
+         String numeroEnLetras="";
+         int numeroActual=0;
+         
+         
+         while(numeroAux>0)
+         {  //saca el digito uno por uno
+            digitos=numeroAux%10;
+            //lo va dividiendo para pasar al numero de allado
+            numeroAux=numeroAux/10;
+            //guarda el numero al reverso, ya que numeroEnLetras vale 0 y le va cocatenando el digito. ej 0+7=7 7+6=76 76+8=768 y asi..
+            numeroEnLetras=numeroEnLetras+digitos;
+            //se puede guardar un numero en un string.
+   
+         }
+         //parseo el numero a entero para poder compararlo con el numero
+         numeroActual=Integer.parseInt(numeroEnLetras);
+         //si el numero es = al numero actual es palindromo
+         if(numero==numeroActual)
+         {
+             System.out.println("es palindromo");
+         }else
+         {
+             System.out.println("no es palindromo");
+         }
+         
+         
+        
+             
+     }
+     
+     /**
+      * 70- hacer el triangulo invertido.
+      */
+     public static void  ejercicioSetenta()
+     {
+          int cantidadDeFilas=6;
+         for (int contador = cantidadDeFilas; contador > 1; contador--) {
+             for (int contadorLugares = cantidadDeFilas+1; contadorLugares > contador; contadorLugares--) {
+                 System.out.print(" ");
+             }
+             for (int contador2 = 7; contador2 <=(2*contador+1); contador2++) {
+                 System.out.print("x");
+             }
+             System.out.println("");
+         }
+     }
+     
+     /**
+      * 58-Mostrar la serie “UTN-FRA” , para los múltiplos de 3 = “FRA” , para los múltiplos de 5 = “UTN” y
+para los múltiplos de 3 y 5 al mismo tiempo mostrar “UTN-FRA”.
+      */
+     public static void ejercicioCicuentaYOcho()
+     {
+         /*
+         for (int contador = 1; contador < 100; contador++) {
+             if(contador%5==0 && contador%3==0)
+             {
+                 System.out.println("UTN-FRA");
+             }else
+             {
+                 if(contador%5==0)
+                 {
+                     System.out.println("UTN");
+                 }else
+                 {
+                     if(contador%3==0)
+                     {
+                         System.out.println("FRA");
+                     }else
+                     {
+                         System.out.println(contador);
+                     }
+                 }
+             }
+         }*/
+         int bandera=0;
+         for (int contador = 1; contador < 101; contador++) {
+             if(contador%5==0 && contador%3==0)
+             {
+                 System.out.println("UTN-FRA");
+                 bandera=1;
+             }else
+             {
+                 if(contador%5==0)
+                 {
+                     System.out.println("UTN");
+                     bandera=1;
+                 }
+                 
+                    if(contador%3==0)
+                    {
+                         System.out.println("FRA");
+                         bandera=1;
+                    }
+                 
+             }
+             
+             if(bandera==0)
+             {
+                 System.out.println(contador);
+             }
+             bandera=0;
+         }//fin del for
+         
+         
+
+     }
+     
+     /**
+      * 59-Mostrar la tabla de multiplicar de un número ingresado.
+      */
+     public static void ejercicioCicuentaYNueve()
+     {
+         int numero=5;
+         int resultado=0;
+         for (int contador = 1; contador <= 10; contador++) {
+             resultado=numero*contador;
+             System.out.println(numero+" * "+contador+" = "+resultado);
+         }
+     }
+     /**
+      * a
+      * ab
+      * abc
+      * abcd
+      */
+     public static void patronDeLetras()
+     {
+         char letra;
+         /*
+         for (letra='A'; letra <= 'a'; letra++) {
+             System.out.println(letra);
+         }
+         */
+         
+         //casteo, 
+         //System.out.println((char)65);
+         for (int contador =65; contador < 91; contador++) {
+             
+             
+             for (int contador1 = 65; contador1 <= contador; contador1++) {
+                 char letraCasteada=((char)contador1);
+                  
+                 switch(letraCasteada)
+                 {
+                     case 'A':
+                         System.out.print(1);
+                     break;
+                     case 'E':
+                         System.out.print(2);
+                     break;
+                     case 'I':
+                         System.out.print(3);
+                     break;
+                     case 'O':
+                         System.out.print(4);
+                     break;
+                     case 'U':
+                         System.out.print(5);
+                     break;
+                     
+                     default:
+                         System.out.print((char)contador1);
+                 }
+                 
+             }
+             System.out.println("");
+         }
+     }
+     
+     public static void mostrarCaracteresAschii()
+     {
+         for (int contador = 0; contador < 150; contador++) {
+             System.out.println(contador+" = "+(char)contador);
+         }
+     }
+     
 }

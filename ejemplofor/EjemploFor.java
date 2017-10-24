@@ -16,7 +16,8 @@ public class EjemploFor {
      */
     public static void main(String[] args) {
         
-        funcionesParaFor.mostrarFilas();
+        funcionesParaFor.mostrarCaracteresAschii();
+       //funcionesParaFor.numeroAmstrong();
     }
     
 }
