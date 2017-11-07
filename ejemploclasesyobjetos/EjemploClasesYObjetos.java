@@ -5,6 +5,8 @@
  */
 package ejemploclasesyobjetos;
 
+import java.util.Scanner;
+
 
 
 /**
@@ -61,17 +63,45 @@ public class EjemploClasesYObjetos {
 //          nuevoAlumno9=new Alumno();
 //          Alumno nuevoAlumno10;
 //          nuevoAlumno10=new Alumno();
-        //array de 10
-        Alumno []nuevoAlumno;
+//        //array de 10
+//        Alumno []nuevoAlumno;
+//        nuevoAlumno=new Alumno[10];
+//        
+//        //crea 10 objetos de Alumno.
+//        for (int i = 0; i < 10; i++) {
+//            nuevoAlumno[i]=new Alumno();
+//        }
+
+//        Usuario nuevoUsuario;
+//        nuevoUsuario=new Usuario();       
+//        nuevoUsuario.DameNombre("natalia natalia");
+//        nuevoUsuario.DameClave("666");
+//        
+//        
+//        nuevoUsuario.mostrarDatos();
+//        System.out.println("el nombre es: "+nuevoUsuario.GetNombre());
+//        nuevoUsuario.mostrarDatos();
+
+//array, static, geter, seter.
+
+        Scanner miscan=new Scanner(System.in);
+        Alumno[] nuevoAlumno;
         nuevoAlumno=new Alumno[10];
-        
         for (int i = 0; i < 10; i++) {
             nuevoAlumno[i]=new Alumno();
+            String nombre=generarRandom.DameUnNombre();
+            nuevoAlumno[i].nombre=nombre;
+            
+            int edad=generarRandom.DameUnaEdad();
+            nuevoAlumno[i].legajo=edad;
+            
+            
         }
         
+        for (int i = 0; i < 10; i++) {
+            nuevoAlumno[i].mostrarDatos();
+        }
         
-        
-          
           
           
         
