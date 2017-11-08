@@ -17,9 +17,9 @@ public class Alumno {
     private String sexo; //f o m o"esta mal"
     private String fechaDeNacimiento;
     private String localidad;//>4 letras o "mal localidad"
-    private String direccion;//>8 letras o "Direccion"
-    private int legajo; //de 6 caracteres o"mal"
-    private int dni; //= 8 caracteres.
+    private String direccion;//>8 letras o "mal Direccion"
+    private int legajo; //de 6 caracteres o"mal legajo"
+    private int dni; //= 8 caracteres o "mal dni".
     
     
     public String getNombre()
@@ -57,14 +57,35 @@ public class Alumno {
         return this.direccion.toUpperCase();
     }
     
-    public int getLegajo()
-    {   
-        return this.legajo;
+    public String getLegajo()
+            
+    {   int aux=this.legajo;
+        String auxiliar=String.valueOf(aux);
+        int cantidad=auxiliar.length();
+        
+        if (cantidad==6)
+        {
+            return ""+this.legajo;
+        }else
+        {
+            return "MAL LEGAJO";
+        }
+ 
     }
     
-    public int getDni()
+    public String getDni()
     {
-        return this.dni;
+        int aux=this.dni;
+        String auxiliar=String.valueOf(aux);
+        int cantidad=auxiliar.length();
+        
+        if (cantidad==8)
+        {
+            return ""+this.dni;
+        }else
+        {
+            return "MAL DNI";
+        }
     }
     
     public void setNombre(String nombre)

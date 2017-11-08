@@ -17,14 +17,16 @@ public class EjemploClasesYObjetos {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        //declaramos scanner y variable aux;
         Scanner miscan=new Scanner(System.in);
         String datoAux;
+        //creamos los objetos
         Alumno []nuevoAlumno;
         nuevoAlumno=new Alumno[10];
         
-        for (int i = 0; i < 1; i++) {
+        for (int i = 0; i < nuevoAlumno.length; i++) {
             nuevoAlumno[i]=new Alumno();
-            
+            //seteamos los atributos.
             System.out.println("Ingrese nombre del Alumno");
             String nombre=miscan.next();
             nuevoAlumno[i].setNombre(nombre);
@@ -65,8 +67,8 @@ public class EjemploClasesYObjetos {
 
         }
         
-        for (int i = 0; i < 1; i++) {
-            
+        for (int i = 0; i < nuevoAlumno.length; i++) {
+            //getteamos los atributos.
             System.out.println("El nombre del alumno "+i+" es: "+nuevoAlumno[i].getNombre());
             System.out.println("El apellido del alumno "+i+" es: "+nuevoAlumno[i].getApellido());
             System.out.println("El correo del alumno "+i+" es: "+nuevoAlumno[i].getCorreo());
