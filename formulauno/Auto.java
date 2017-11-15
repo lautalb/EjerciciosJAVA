@@ -22,16 +22,95 @@ public class Auto {
         this.modelo="Ford";
         this.numero=numero;
         //this.MiEscuderia= new Escuderia(1930,"Italia" , "Ferrari");
-        //this.CargarEscuderia();  hacer los metodos para que cargue, año, escuderia y nombre random.
+        this.MiEscuderia=new Escuderia();
+        this.CargarEscuderia();  //hacer los metodos para que cargue, año, escuderia y nombre random.
         this.CargarPilotoRandom();
     }
     
     public void Mostrar()
     {   System.out.println("numero: "+this.numero);
-        System.out.println("Escuderia: "+this.MiEscuderia.nombre);
+        System.out.println("Escuderia: "+this.MiEscuderia.NombreEscuderiaPais());
         System.out.println("Modelo: "+this.modelo);
         System.out.println("tiempo recorrido: "+this.TiempoRecorrido);
         System.out.println("El ganador es: "+this.elPiloto.DameNombreCompletoMay());
+    }
+    
+    private void AñoRandom()
+    {
+        int miRandom=(int)(Math.random()*1900);
+        this.MiEscuderia.SetterAño(miRandom);
+    }
+    
+    private void EscuderiaRandom()
+    {
+        int miRandom=(int)(Math.random()*6);
+        switch(miRandom)
+        {
+            case 0:
+                this.MiEscuderia.SetterNombre("ferrari");
+                break;
+                
+                case 1:
+                this.MiEscuderia.SetterNombre("Lamborghini");
+                break;
+                
+                case 2:
+                this.MiEscuderia.SetterNombre("McLaren");
+                break;
+                
+                case 3:
+                this.MiEscuderia.SetterNombre("Porsche");
+                break;
+                
+                case 4:
+                this.MiEscuderia.SetterNombre("Mercedes Benz");
+                break;
+                
+                case 5:
+                this.MiEscuderia.SetterNombre("Williams");
+                break;
+        }
+    }
+    
+    private void PaisRandom()
+    {
+        int miRandom=(int)(Math.random()*6);
+        
+        
+           switch(miRandom)
+        {
+            case 0:
+                this.MiEscuderia.SetterPais("Argentina");
+                break;
+                
+                case 1:
+                this.MiEscuderia.SetterPais("Alemania");
+                break;
+                
+                case 2:
+                this.MiEscuderia.SetterPais("Francia");
+                break;
+                
+                case 3:
+                this.MiEscuderia.SetterPais("Inglaterra");
+                break;
+                
+                case 4:
+                this.MiEscuderia.SetterPais("India");
+                break;
+                
+                case 5:
+                this.MiEscuderia.SetterPais("Brazil");
+                break;
+        } 
+        
+    }
+    
+    public void CargarEscuderia()
+    {
+        this.EscuderiaRandom();
+        this.AñoRandom();
+        this.PaisRandom();
     }
     
     public int DameElTiempoRecorrido()
@@ -44,6 +123,7 @@ public class Auto {
     {
         this.TiempoRecorrido=this.TiempoRecorrido+tiempo;
     }
+    
     
     
     private void CargarPilotoRandom()

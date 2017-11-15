@@ -14,12 +14,35 @@ public class Escuderia {
     public String nombre;
     public int AñoFundacion;
     
-    public Escuderia(int año, String pais, String nombre)   //los contructores tienen el nombre de la clase.
+    public Escuderia()   //los contructores tienen el nombre de la clase.
+    {   
+        this.pais="Argentina";
+        this.nombre="Ferrari";
+        this.AñoFundacion=1997;
+    }
+    
+    public void SetterPais(String pais)
     {
         this.pais=pais;
+    }
+    
+    public void SetterNombre(String nombre)
+    {
         this.nombre=nombre;
+    }
+    
+    public void SetterAño(int año)
+    {
         this.AñoFundacion=año;
     }
+    
+    public String NombreEscuderiaPais()
+    {   String retorno="";
+        retorno=this.nombre+" "+this.pais+" "+this.AñoFundacion;
+        
+        return retorno;
+    }
+    
     
     
 }
