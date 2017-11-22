@@ -25,8 +25,11 @@ public class HenerciaDos {
      
       ArrayList<Documento> listadoDocumentos;
       listadoDocumentos= new ArrayList<>();
+      //agrego una factura A
       listadoDocumentos.add(mifactura);
+      //agrego una factura B
       listadoDocumentos.add(mifacturab);
+      //agrego un remito
       listadoDocumentos.add(miremito);
       
       for (Documento alguno : listadoDocumentos) {
