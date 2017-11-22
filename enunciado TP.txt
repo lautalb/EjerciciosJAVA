@@ -1,0 +1,14 @@
+Se debe realizar el control de compra y venta de un local, la clase articulo debe tener los siguientes 
+atributos : Codigo, nombre, precio de costo, precio de venta y stock, ademas debe tener los getters de precioventa y nombreycodigo, los setters de preciocosto y stock
+constructor que reciba todos los atributos con parametros. Metodos : (Instancia)hayStock:boolean , (static)SonIguales(recibe 2 arituclos):boolean "compara el nombre y el codigo"si son iguales retonra true, si no false
+
+
+2 herencias, articulo comestibles que tiene fechaDeVencimiento privado
+articulo liquido que contiene litros, los 2 reciben estos atributos por parametros para el constructor.
+
+clase Venta : metodos > retornar ganancia:float ,tiene 1 articulo vendido que es del tipo articulo, una cantidad que es entero, en el constructor de articulo reciba todo menos el precioventa y que se calcula con un 25% de incremento sobre el precio de costo.
+
+
+clase comercio tiene un string dueño, un arraylist de articulos, otro arraylist de venta(que producto y que cantidad vendio)
+el constructor tiene el nombre del dueño. metodo vender articulo recibe un articulo y una cantidad(lo guarda en el arraylist)
+metodo mostrar articulos (que muestre todos los articulos), mostrar ventas(que muestre todas las ventas), comprar articulo (ricebe un articulo y una cantidad)= que el de vender. 
