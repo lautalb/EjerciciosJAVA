@@ -44,7 +44,7 @@ public class Local {
         
         
         //venta
-        ElBolicheDeTony.MostrarVentas();
+        
         
         
         
