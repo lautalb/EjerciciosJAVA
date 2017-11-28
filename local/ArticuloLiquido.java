@@ -7,13 +7,13 @@ package local;
 
 /**
  *
- * @author lauta
+ * @author alumno
  */
-public class ArticuloLiquido {
-    private double _litros;
-    
-    public ArticuloLiquido(double litros)
-    {
-        this._litros=litros;
-    }
+public class ArticuloLiquido extends Articulo{
+    private float _litros;
+   public ArticuloLiquido(int codigoDeBarra,String nombreDeArticulo,float PrecioCosto, int Stock, float litros)
+   {    
+       super(codigoDeBarra, nombreDeArticulo, PrecioCosto, Stock);
+       this._litros=litros;
+   }
 }

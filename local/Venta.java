@@ -14,46 +14,33 @@ public class Venta {
     private int _cantidad;
     
     public Venta(Articulo ArticuloVendido, int cantidad) //constructor
-    {   
-        if(ArticuloVendido.HayStock(ArticuloVendido.GetNombreArticulo(), cantidad))//verifica si hay stock para poder vender
-        {
-            this._articuloVendido=ArticuloVendido;
-            this._cantidad=cantidad;
-        }else
-        {
-            System.out.println("No hay stock suficiente");
-        }
+    {  
+        this._articuloVendido=ArticuloVendido;
+         this._cantidad=cantidad; 
       
     }
-    
-    
-    
-    
-    public void MostrarVenta()//muestra la venta
-    {   if(this._articuloVendido!=null)
-        {
-        System.out.println("Articulo vendido: "+this._articuloVendido.GetNombreArticulo()+" Precio: "+this._articuloVendido.GetPrecioVenta()+"$.");
-        System.out.println("Cantidad Vendida: "+this._cantidad);
-        }
+
+   public void MostrarVenta()//muestra la venta
+   {   
+            System.out.println(""+this._cantidad);
+            System.out.println("Articulo: ");
+            this._articuloVendido.MostrarArticulo();
     }
     
     
     
-    public double RetornarGanancias()//retorna las ganancias
-    {   double calcular=0;
-        double retorno=0;
-        double precioCosto=this._articuloVendido.GetPrecioCosto();
-        double precioVenta=this._articuloVendido.GetPrecioVenta();
-        if(this._articuloVendido!=null)
-        { 
-            calcular=(precioVenta*this._cantidad)-(precioCosto*this._cantidad);
-            retorno=calcular;
-        }
+    public float RetornarGanancias()//retorna las ganancias
+    {   
+        float retorno=0;
+        float gananciaFacturado=this._articuloVendido.GetGanancias()*this._cantidad;
+
+          retorno=gananciaFacturado;
+        
         return retorno;
     }
     
-    public void MostrarGanancias()
-    {
-        System.out.println("Las ganancia es: "+this.RetornarGanancias()+"$.");
-    }
+//    public void MostrarGanancias()
+//    {
+//        System.out.println("Las ganancia es: "+this.RetornarGanancias()+"$.");
+//    }
 }

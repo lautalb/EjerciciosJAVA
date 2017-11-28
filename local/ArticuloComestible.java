@@ -9,15 +9,14 @@ import java.util.Date;
 
 /**
  *
- * @author lauta
+ * @author alumno
  */
-public class ArticuloComestible {
+public class ArticuloComestible extends Articulo{
     
-    private Date _fechaVencimiento;
+    private String FechaVencimiento;
     
-    public ArticuloComestible(Date fechaDeVencimiento)
-    {   
-        this._fechaVencimiento=fechaDeVencimiento;
+    public ArticuloComestible(int codigoDeBarra,String nombreDeArticulo,float PrecioCosto, int Stock,String fechaVencimiento)
+    {   super(codigoDeBarra, nombreDeArticulo, PrecioCosto, Stock);
+        this.FechaVencimiento=fechaVencimiento;  
     }
-    
 }
