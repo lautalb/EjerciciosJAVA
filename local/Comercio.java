@@ -51,7 +51,7 @@ public class Comercio {
         for (Articulo misArticulo : this._misArticulos) {
             
             if(Articulo.SonIguales(misArticulo, art))
-           {    
+           {                                                 //cantidad
                 misArticulo.SetStock(misArticulo.GetStock()+art.GetStock());
                return "Se sumo al stock";         
            }

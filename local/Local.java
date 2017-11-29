@@ -38,13 +38,14 @@ public class Local {
         System.out.println("Resputas: "+respuesta2);
        
         String respuesta3;
-        respuesta3=ElBolicheDeTony.ComprarArticulo(nuevoArticulo3, 25);
+        respuesta3=ElBolicheDeTony.ComprarArticulo(nuevoArticulo3, 10);
         System.out.println("Resputas: "+respuesta3);
         
         
         
         //venta
-        
+        respuesta=ElBolicheDeTony.VenderArticulo(nuevoArticulo, 2);
+        System.out.println(respuesta);
         
         
         
