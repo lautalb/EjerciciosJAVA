@@ -1,0 +1,25 @@
+Carga de datos
+
+INSERT INTO `envios`(`numero`, `pNumero`, `cantidad`) VALUES (100,1,500),
+(100,2,1500),
+(100,3,100),
+(101,2,55),
+(101,3,225),
+(102,1,600),
+(102,3,300)
+
+Consultas:
+1-SELECT `pNumero`, `pNombre`, `precio`, `tamaño` FROM productos as p
+ORDER BY p.pNombre ASC   /// o Desc
+
+2- SELECT `numero`, `nombre`, `domicilio`, `localidad` FROM `provedores` WHERE provedores.localidad = "Quilmes"
+
+3- SELECT `numero`, `pNumero`, `cantidad` FROM `envios` WHERE envios.cantidad BETWEEN 200 and 300
+
+4-SELECT SUM(`cantidad`) FROM `envios` WHERE 1
+
+5-SELECT `pNumero` FROM envios LIMIT 0,3 ///order by envis.numero DESC(para descendente primero se hace esto de ordenar y depsues cortarlo con el limit.)
+
+6- select p.pNombre from envios as e, producto as p where e.pNumero=p.pNumero limit 3
+
+

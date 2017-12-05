@@ -1,0 +1,40 @@
+SQL
+1-minimo una tabla.
+2-todas las tablas tienen un {ID}  pk=primary key
+3-las columnas tienen tipo(ej string, integer etc)
+4-Las filas o registros tienen todos los datos
+
+primer comando : 
+insert 
+
+
+4
+5
+6
+7
+
+INSERT INTO `alumno`
+( `nombre`, `apellido`, `legajo`, `localidad`) 
+VALUES 
+("Juan","martes","45682",6)
+
+
+Comandos
+insert into "nombre de tabla"(campo1,campo 2) values ("valor1","valor2")
+
+update "nombre de tabal0" set campo="valor" campo2="valor2"
+
+delete from "nombre de tabla" where id=3
+
+select * from "nombre de tabla" (trae todos los campos)
+
+
+selec nombre de tabla, localidad.descripcion from nombre de tabla, localidad 
+
+SELECT alumno, localidad.descripcion from alumno, localidad
+
+para los tutoriales: https://www.w3schools.com/sql/sql_count_avg_sum.asp
+
+
+
+
