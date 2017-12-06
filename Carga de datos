@@ -1,0 +1,49 @@
+Carga de datos
+
+INSERT INTO `envios`(`numero`, `pNumero`, `cantidad`) VALUES (100,1,500),
+(100,2,1500),
+(100,3,100),
+(101,2,55),
+(101,3,225),
+(102,1,600),
+(102,3,300)
+
+Consultas:
+1-SELECT `pNumero`, `pNombre`, `precio`, `tamaño` FROM productos as p
+ORDER BY p.pNombre ASC   /// o Desc
+
+2- SELECT `numero`, `nombre`, `domicilio`, `localidad` FROM `provedores` WHERE provedores.localidad = "Quilmes"
+
+3- SELECT `numero`, `pNumero`, `cantidad` FROM `envios` WHERE envios.cantidad BETWEEN 200 and 300
+
+4-SELECT SUM(`cantidad`) FROM `envios` WHERE 1
+
+5-SELECT `pNumero` FROM envios LIMIT 0,3 ///order by envis.numero DESC(para descendente primero se hace esto de ordenar y depsues cortarlo con el limit.)
+
+6- select pv.Nombre,pd.pNombre from provedores as pv, productos as pd, envios as e where pv.Numero = e.Numero AND pd.pNumero = e.pNumero
+
+7- SELECT (pd.Precio*e.Cantidad)  FROM productos as pd, envios as e WHERE 1
+
+8-SELECT SUM(e.Cantidad) FROM envios as e WHERE e.Numero = 102 and e.pnumero = 1
+
+9-SELECT e.pNumero FROM provedores as pv, envios as e WHERE e.numero = 101 and pv.Localidad="avellaneda"
+
+
+10-SELECT pv.Domicilio, pv.Localidad FROM provedores as pv WHERE pv.Nombre like '%i%' 
+
+11-INSERT INTO productos(`pNumero`, `pNombre`, `Precio`, `Tamaño`) VALUES (4,"Chocolate",25.35,"Chico")
+
+12- INSERT INTO provedores(`Numero`, `Nombre`, `Domicilio`, `Localidad`) VALUES (50,"Ramiro","Av patricios 565","Barracas")
+
+13- INSERT INTO `provedores`(`Numero`, `Nombre`, `Domicilio`, `Localidad`) VALUES (107,"Rosales","Calle falsa 123","La Plata")
+
+14-UPDATE productos SET `Precio`=97.50 WHERE productos.Tamaño="grande"
+
+15- UPDATE productos,envios as e SET `Tamaño`="Mediano" WHERE e.Cantidad>=300 and productos.Tamaño="chico"
+
+16- DELETE FROM productos  WHERE productos.pNumero=1
+
+
+
+
+

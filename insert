@@ -1,0 +1,27 @@
+insert
+into
+"nombre de tabla"
+(campo1,campo2)
+values
+("",""),("","")
+
+
+
+Delete
+from
+"nombre de tabla"
+where
+Condicion(id=x)
+
+update(para editar)
+"nombre de tabla"
+set
+nombre="otro"
+where
+condicion(id=?)
+
+SELECT `id`, `nombre`, `clave`, `fecha` 
+FROM usuario as u 
+WHERE 1
+ORDER by u.nombre
+limit 3
