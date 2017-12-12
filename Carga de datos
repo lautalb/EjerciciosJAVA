@@ -39,9 +39,19 @@ ORDER BY p.pNombre ASC   /// o Desc
 
 14-UPDATE productos SET `Precio`=97.50 WHERE productos.Tamaño="grande"
 
-15- UPDATE productos,envios as e SET `Tamaño`="Mediano" WHERE e.Cantidad>=300 and productos.Tamaño="chico"
+15- UPDATE productos,envios as e SET `Tamaño`="Mediano" WHERE e.Cantidad>=300 and productos.Tamaño="chico"  // funciona mal.
+
+15- UPDATE Productos 
+SET Tamaño = 'MEDIANO' 
+where Tamaño ='chico' 
+and Productos.pNumero in( select pNumero
+							from Envios  
+							where Envios.Cantidad >= 300)
+
 
 16- DELETE FROM productos  WHERE productos.pNumero=1
+
+
 
 
 
