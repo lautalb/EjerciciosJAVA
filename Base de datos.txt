@@ -1,0 +1,51 @@
+uml, 1:1 1:m m:m    cuando es m:m hay que hacer una tabla intermedia.
+
+3 tipos de join : inner join, left join, right join,
+
+el inner es para 2 tablas relacionadas.
+left : todo lo de la izquierda 
+right : todo lo de la derecha 
+
+
+
+
+para hacer un into:
+
+
+INSERT INTO `guia`.`provincia` (`idprovincia`, `nombre`) VALUES ('1', 'BS AS');
+
+INSERT INTO `guia`.`provincia` (`idprovincia`, `nombre`) VALUES ('2', 'CABA');
+
+
+INSERT INTO `guia`.`localidad` (`idlocalidad`, `nombre`, `id_prov`) VALUES ('1', 'Avellaneda', '2');
+
+INSERT INTO `guia`.`localidad` (`idlocalidad`, `nombre`, `id_prov`) VALUES ('2', 'Quilmes', '2');
+
+INSERT INTO `guia`.`localidad` (`idlocalidad`, `nombre`, `id_prov`) VALUES ('3', 'Caballito', '1');
+
+
+
+INSERT INTO `guia`.`personas` (`idpersonas`, `nombre`, `apellido`, `id_loc`) VALUES ('', 'Pedro', 'Gutierrez', '1');
+
+INSERT INTO `guia`.`personas` (`idpersonas`, `nombre`, `apellido`, `id_loc`) VALUES ('', 'Roman', 'Fabiolo', '2');
+
+INSERT INTO `guia`.`personas` (`nombre`, `apellido`, `id_loc`) VALUES ('Joaquin', 'Torner', '1');
+
+INSERT INTO `guia`.`personas` (`nombre`, `apellido`, `id_loc`) VALUES ('Stefania', 'Martinez', '2');
+
+INSERT INTO `guia`.`personas` (`nombre`, `apellido`, `id_loc`) VALUES ('Jazmin', 'Lazarte', '3');
+
+INSERT INTO `guia`.`personas` (`nombre`, `apellido`, `id_loc`) VALUES ('Nestor', 'Martoli', '3');
+
+
+
+traer los de BS AS
+
+SELECT p.nombre, p.apellido 
+
+from guia.personas p 
+
+inner join localidad l on l.id =p.id_loc 
+
+inner join provincia pr on pr.idprovincia = l.id_prov
+where idprovincia=2;
