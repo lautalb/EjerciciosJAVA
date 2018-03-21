@@ -8,6 +8,7 @@ package bdcine111mil;
 import dao.miConexion;
 import dao.peliculasDao;
 import entidades.pelicula;
+import java.util.List;
 
 /**
  *
@@ -21,20 +22,21 @@ public class BDCine111mil {
     public static void main(String[] args) {
         // TODO code application logic here
         System.out.println("hola");
-       pelicula UnaPeli = new pelicula();
-       UnaPeli.setNombre("terminator");
+       pelicula UnaPeli = new pelicula("titulo nuevo");
+       //UnaPeli.setNombre("terminator");
        // todos
        
-      if( UnaPeli.guardarPelicula())
+      if( UnaPeli.guardarPelicula()==0)
       {
-          System.out.println("exito");
+          System.out.println("mmmm");
       }else
       {
-          System.out.println("mmmmm");
+          System.out.println("exito");
       }
        
-       peliculasDao peli= new peliculasDao();
-       peli.mostrarPeliculas();
+       
+       List<pelicula> listado= pelicula.retornarPeliculas();
+       
   
     }
     

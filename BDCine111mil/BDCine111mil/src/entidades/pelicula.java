@@ -6,6 +6,7 @@
 package entidades;
 
 import dao.peliculasDao;
+import java.util.List;
 
 /**
  *
@@ -16,7 +17,11 @@ public class pelicula {
     private String nombre;
     private String genero;
     private String idioma;
-   
+    
+    public pelicula(String nombre)
+    {
+        this.nombre= nombre;
+    }
     public String getNombre() {
         return nombre;
     }
@@ -42,13 +47,20 @@ public class pelicula {
     }
 
     
-    public boolean guardarPelicula()
+    public int guardarPelicula()
     {
         peliculasDao  peliDao= new peliculasDao();
         return peliDao.guardarPelicula(this);
         
         
     }
+    
+    public static List<pelicula> retornarPeliculas()
+    {
+         peliculasDao  peliDao= new peliculasDao();
+        return peliDao.retornarPeliculas();
+    }
+    
     
     
     

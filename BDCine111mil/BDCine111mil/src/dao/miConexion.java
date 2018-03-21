@@ -18,7 +18,7 @@ import java.util.logging.Logger;
 public class miConexion {
      
     String jdbc_driver = "com.mysql.jdbc.Driver";
-    String jdbc_db_url = "jdbc:mysql://localhost:3306/cine";
+    String jdbc_db_url = "jdbc:mysql://localhost:3306/";
     String jdbc_user = "root";
     String jdbc_pass = "";
     private static Connection  UnaConeccion;

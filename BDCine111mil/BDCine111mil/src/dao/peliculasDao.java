@@ -10,6 +10,8 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
@@ -17,32 +19,32 @@ import java.sql.ResultSet;
  */
 public class peliculasDao {
     
-    public void mostrarPeliculas()
+    public List<pelicula> retornarPeliculas()
     {
         
+        List<pelicula> listado= new  ArrayList<>();
         try {
-           miConexion con= new miConexion();
-            
+            miConexion con= new miConexion();            
             Connection conn = con.RetornarConeccion();
             //Connection conn =miConexion..RetornarConeccion();
-            PreparedStatement ps = conn.prepareStatement("select * from peliculas where id = ?");
-            ps.setInt(1, 1);
-            
+            PreparedStatement ps = conn.prepareStatement("select * from peliculas ");         
             ResultSet rs = ps.executeQuery(); // execute o executeUpdate para insert, update, delete
             
             while ( rs.next() ) {
-                System.out.println("" + rs.getString("nombre"));
+              listado.add(new pelicula(     rs.getString("nombre")));
+                
             }
            
         } catch (Exception e) {
             System.out.println(e);
         }
-            
+            return listado;
     }
     
-     public boolean guardarPelicula( pelicula unaPeli)
+     public int guardarPelicula( pelicula unaPeli)
     {
         boolean resultado= false;
+        int retorno=0;
         System.out.println("guardando");
         try {
             miConexion con= new miConexion();
@@ -52,12 +54,12 @@ public class peliculasDao {
             PreparedStatement ps = conn.prepareStatement(" INSERT INTO `peliculas` (`nombre`) VALUES( '"+unaPeli.getNombre()+"')");
            // ps.setString(1,unaPeli.getNombre());
             
-            resultado  = ps.execute(); //  executeQuery  execute o executeUpdate para insert, update, delete
+            retorno  = ps.executeUpdate(); //  executeQuery  execute o executeUpdate para insert, update, delete
                     System.out.println(resultado);  
         } catch (Exception e) {
             System.out.println(e);
         }
-        return resultado;
+        return retorno;
             
     }
 }
