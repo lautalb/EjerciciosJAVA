@@ -7,6 +7,9 @@ package cineproyecto;
 
 import dao.coneccion;
 import entidades.pelicula;
+import formularios.JFvista;
+import java.util.ArrayList;
+import javax.swing.JPanel;
 
 /**
  *
@@ -18,6 +21,10 @@ public class CineProyecto {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+       
+        JFvista jf= new JFvista();
+        
+        jf.setVisible(true);
        
         
         
