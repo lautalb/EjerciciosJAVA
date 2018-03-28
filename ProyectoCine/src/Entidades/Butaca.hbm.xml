@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 28-mar-2018 13:10:33 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="Entidades.Butaca" table="butaca" catalog="proyectocine" optimistic-lock="version">
+        <id name="idbutaca" type="java.lang.Integer">
+            <column name="idbutaca" />
+            <generator class="foreign">
+                <param name="property">salacine</param>
+            </generator>
+        </id>
+        <one-to-one name="salacine" class="Entidades.Salacine" constrained="true"></one-to-one>
+        <property name="butacaTipoButaca" type="string">
+            <column name="butaca_tipoButaca" length="45" not-null="true" />
+        </property>
+        <set name="entradas" table="entrada" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="Entrada_idButaca" not-null="true" />
+            </key>
+            <one-to-many class="Entidades.Entrada" />
+        </set>
+    </class>
+</hibernate-mapping>

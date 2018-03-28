@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 28-mar-2018 13:10:33 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="Entidades.CentroComercial" table="`centro comercial`" catalog="proyectocine" optimistic-lock="version">
+        <id name="idCentroComercial" type="int">
+            <column name="`idCentro Comercial`" />
+            <generator class="assigned" />
+        </id>
+        <property name="centroComercialNombre" type="string">
+            <column name="CentroComercial_nombre" length="45" not-null="true" />
+        </property>
+        <set name="cines" table="cine" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="Cine_IdCentroComercial" not-null="true" />
+            </key>
+            <one-to-many class="Entidades.Cine" />
+        </set>
+    </class>
+</hibernate-mapping>

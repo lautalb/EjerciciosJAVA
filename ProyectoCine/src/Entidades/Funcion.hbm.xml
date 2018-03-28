@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 28-mar-2018 13:10:33 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="Entidades.Funcion" table="funcion" catalog="proyectocine" optimistic-lock="version">
+        <id name="idFuncion" type="int">
+            <column name="idFuncion" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="pelicula" class="Entidades.Pelicula" fetch="select">
+            <column name="Funcion_idPelicula" not-null="true" />
+        </many-to-one>
+        <many-to-one name="salacine" class="Entidades.Salacine" fetch="select">
+            <column name="Funcion_idSala" not-null="true" />
+        </many-to-one>
+        <many-to-one name="tipo" class="Entidades.Tipo" fetch="select">
+            <column name="Funcion_IdTtipo" not-null="true" />
+        </many-to-one>
+        <property name="funcionHorario" type="string">
+            <column name="Funcion_Horario" length="45" />
+        </property>
+        <set name="entradas" table="entrada" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="Entrada_idFuncion" not-null="true" />
+            </key>
+            <one-to-many class="Entidades.Entrada" />
+        </set>
+    </class>
+</hibernate-mapping>

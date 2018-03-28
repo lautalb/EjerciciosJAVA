@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 28-mar-2018 13:10:33 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="Entidades.Entrada" table="entrada" catalog="proyectocine" optimistic-lock="version">
+        <id name="idEntrada" type="int">
+            <column name="idEntrada" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="butaca" class="Entidades.Butaca" fetch="select">
+            <column name="Entrada_idButaca" not-null="true" />
+        </many-to-one>
+        <many-to-one name="funcion" class="Entidades.Funcion" fetch="select">
+            <column name="Entrada_idFuncion" not-null="true" />
+        </many-to-one>
+    </class>
+</hibernate-mapping>
