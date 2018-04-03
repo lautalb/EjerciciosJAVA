@@ -1,12 +1,12 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated 28-mar-2018 13:10:33 by Hibernate Tools 4.3.1 -->
+<!-- Generated 03/04/2018 16:15:59 by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
     <class name="Entidades.Cine" table="cine" catalog="proyectocine" optimistic-lock="version">
-        <id name="idCine" type="int">
+        <id name="idCine" type="java.lang.Integer">
             <column name="idCine" />
-            <generator class="assigned" />
+            <generator class="identity" />
         </id>
         <many-to-one name="centroComercial" class="Entidades.CentroComercial" fetch="select">
             <column name="Cine_IdCentroComercial" not-null="true" />

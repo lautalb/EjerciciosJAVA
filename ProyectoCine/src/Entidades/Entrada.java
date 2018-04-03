@@ -1,5 +1,5 @@
 package Entidades;
-// Generated 28-mar-2018 13:10:33 by Hibernate Tools 4.3.1
+// Generated 03/04/2018 16:15:58 by Hibernate Tools 4.3.1
 
 
 
@@ -9,24 +9,23 @@ package Entidades;
 public class Entrada  implements java.io.Serializable {
 
 
-     private int idEntrada;
+     private Integer idEntrada;
      private Butaca butaca;
      private Funcion funcion;
 
     public Entrada() {
     }
 
-    public Entrada(int idEntrada, Butaca butaca, Funcion funcion) {
-       this.idEntrada = idEntrada;
+    public Entrada(Butaca butaca, Funcion funcion) {
        this.butaca = butaca;
        this.funcion = funcion;
     }
    
-    public int getIdEntrada() {
+    public Integer getIdEntrada() {
         return this.idEntrada;
     }
     
-    public void setIdEntrada(int idEntrada) {
+    public void setIdEntrada(Integer idEntrada) {
         this.idEntrada = idEntrada;
     }
     public Butaca getButaca() {

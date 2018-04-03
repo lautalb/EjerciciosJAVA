@@ -33,13 +33,13 @@ public class frmVistaGeneral extends javax.swing.JFrame {
     private void initComponents() {
 
         jMenuItem1 = new javax.swing.JMenuItem();
-        jpCComercial = new javax.swing.JPanel();
+        pnlPrincipal = new javax.swing.JDesktopPane();
         jmbMenu = new javax.swing.JMenuBar();
         jmCComercial = new javax.swing.JMenu();
         jmiNuevoCComercial = new javax.swing.JMenuItem();
         jmiModificar = new javax.swing.JMenuItem();
         jmiBorrar = new javax.swing.JMenuItem();
-        jmiMostrarCComercial = new javax.swing.JMenuItem();
+        jmiListarCComercial = new javax.swing.JMenuItem();
         jmCines = new javax.swing.JMenu();
         jmiNuevoCine = new javax.swing.JMenuItem();
         jmiModificarCine = new javax.swing.JMenuItem();
@@ -69,15 +69,15 @@ public class frmVistaGeneral extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        javax.swing.GroupLayout jpCComercialLayout = new javax.swing.GroupLayout(jpCComercial);
-        jpCComercial.setLayout(jpCComercialLayout);
-        jpCComercialLayout.setHorizontalGroup(
-            jpCComercialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 233, Short.MAX_VALUE)
+        javax.swing.GroupLayout pnlPrincipalLayout = new javax.swing.GroupLayout(pnlPrincipal);
+        pnlPrincipal.setLayout(pnlPrincipalLayout);
+        pnlPrincipalLayout.setHorizontalGroup(
+            pnlPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 453, Short.MAX_VALUE)
         );
-        jpCComercialLayout.setVerticalGroup(
-            jpCComercialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 150, Short.MAX_VALUE)
+        pnlPrincipalLayout.setVerticalGroup(
+            pnlPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 477, Short.MAX_VALUE)
         );
 
         jmCComercial.setText("C. Comercial");
@@ -106,13 +106,13 @@ public class frmVistaGeneral extends javax.swing.JFrame {
         });
         jmCComercial.add(jmiBorrar);
 
-        jmiMostrarCComercial.setText("Mostrar");
-        jmiMostrarCComercial.addActionListener(new java.awt.event.ActionListener() {
+        jmiListarCComercial.setText("Listar");
+        jmiListarCComercial.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jmiMostrarCComercialActionPerformed(evt);
+                jmiListarCComercialActionPerformed(evt);
             }
         });
-        jmCComercial.add(jmiMostrarCComercial);
+        jmCComercial.add(jmiListarCComercial);
 
         jmbMenu.add(jmCComercial);
 
@@ -219,17 +219,11 @@ public class frmVistaGeneral extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(26, 26, 26)
-                .addComponent(jpCComercial, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(141, Short.MAX_VALUE))
+            .addComponent(pnlPrincipal, javax.swing.GroupLayout.Alignment.TRAILING)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(51, 51, 51)
-                .addComponent(jpCComercial, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(78, Short.MAX_VALUE))
+            .addComponent(pnlPrincipal, javax.swing.GroupLayout.Alignment.TRAILING)
         );
 
         pack();
@@ -250,32 +244,24 @@ public class frmVistaGeneral extends javax.swing.JFrame {
     
     public void VerificarVisibilidadFormulario()
     {
-        if(this.formulario!=null)
-        {
-            this.formulario.setVisible(false);
-        }
+        
         
     }
     
     public void InstanciarFormularioCComercial()
     {
-        this.formulario=new frmCComercial();
-        this.formulario.setVisible(true);
+        
     }
     
     public void VerificarVisibilidadPanel()
     {
-        if(this.panel!=null)
-        {
-            this.panel.setVisible(true);
-        }
+        
     }
     
     
     private void jmiNuevoCineActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiNuevoCineActionPerformed
         // TODO add your handling code here:
-        frmCine frm = new frmCine();
-        frm.setVisible(true);
+        
     }//GEN-LAST:event_jmiNuevoCineActionPerformed
 
     private void jmiNuevoCComercialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiNuevoCComercialActionPerformed
@@ -285,34 +271,44 @@ public class frmVistaGeneral extends javax.swing.JFrame {
         //verificar si hay un formulario activo
         //VerificarVisibilidadFormulario();
         
-        InstanciarFormularioCComercial();
+        
         //verifica si hay un panel visible en el formulario
         //VerificarVisibilidadPanel();
-        frmCComercial.jpNuevoCComercial.setVisible(true);
-
+        
+        frmCComercial frm=new frmCComercial();
+        frm.setMaximizable(true);
+            frm.setClosable(true);
+            frm.setResizable(true);
+            pnlPrincipal.add(frm);
+            frm.setVisible(true);
+        
     }//GEN-LAST:event_jmiNuevoCComercialActionPerformed
 
     private void jmiModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiModificarActionPerformed
         // TODO add your handling code here:
-        InstanciarFormularioCComercial();
+        
         //VerificarVisibilidadPanel();
-        frmCComercial.jpCComercialModificar.setVisible(true);
+        
         
     }//GEN-LAST:event_jmiModificarActionPerformed
 
     private void jmiBorrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiBorrarActionPerformed
         
-        InstanciarFormularioCComercial();
+        
        // VerificarVisibilidadPanel();
-       frmCComercial.jpCComercialBorrar.setVisible(true);
+       
         
     }//GEN-LAST:event_jmiBorrarActionPerformed
 
-    private void jmiMostrarCComercialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiMostrarCComercialActionPerformed
-        InstanciarFormularioCComercial();
-        frmCComercial.jpCComercialModificar.setVisible(true);
+    private void jmiListarCComercialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiListarCComercialActionPerformed
+        frmCComercial frm= new frmCComercial();
+        frm.setMaximizable(true);
+            frm.setClosable(true);
+            frm.setResizable(true);
+            pnlPrincipal.add(frm);
+            frm.setVisible(true);
         
-    }//GEN-LAST:event_jmiMostrarCComercialActionPerformed
+    }//GEN-LAST:event_jmiListarCComercialActionPerformed
 
     /**
      * @param args the command line arguments
@@ -366,12 +362,12 @@ public class frmVistaGeneral extends javax.swing.JFrame {
     private javax.swing.JMenuItem jmiBorrarPelicula;
     private javax.swing.JMenuItem jmiBorrarSala;
     private javax.swing.JMenuItem jmiConteoDeVentas;
+    private javax.swing.JMenuItem jmiListarCComercial;
     private javax.swing.JMenuItem jmiModificar;
     private javax.swing.JMenuItem jmiModificarCine;
     private javax.swing.JMenuItem jmiModificarFuncion;
     private javax.swing.JMenuItem jmiModificarPelicula;
     private javax.swing.JMenuItem jmiModificarSala;
-    private javax.swing.JMenuItem jmiMostrarCComercial;
     private javax.swing.JMenuItem jmiMostrarCines;
     private javax.swing.JMenuItem jmiMostrarFunciones;
     private javax.swing.JMenuItem jmiMostrarLugaresLibres;
@@ -382,6 +378,6 @@ public class frmVistaGeneral extends javax.swing.JFrame {
     private javax.swing.JMenuItem jmiNuevoCComercial;
     private javax.swing.JMenuItem jmiNuevoCine;
     private javax.swing.JMenuItem jmiVenderEntradas;
-    private javax.swing.JPanel jpCComercial;
+    private javax.swing.JDesktopPane pnlPrincipal;
     // End of variables declaration//GEN-END:variables
 }

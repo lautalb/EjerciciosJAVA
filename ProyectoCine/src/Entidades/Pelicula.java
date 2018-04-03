@@ -1,5 +1,5 @@
 package Entidades;
-// Generated 28-mar-2018 13:10:33 by Hibernate Tools 4.3.1
+// Generated 03/04/2018 16:15:58 by Hibernate Tools 4.3.1
 
 
 import java.util.HashSet;
@@ -11,7 +11,7 @@ import java.util.Set;
 public class Pelicula  implements java.io.Serializable {
 
 
-     private int idPelicula;
+     private Integer idPelicula;
      private String peliculaNombre;
      private String peliculaDuracion;
      private String peliculaEdadMinima;
@@ -21,25 +21,23 @@ public class Pelicula  implements java.io.Serializable {
     }
 
 	
-    public Pelicula(int idPelicula, String peliculaNombre, String peliculaDuracion, String peliculaEdadMinima) {
-        this.idPelicula = idPelicula;
+    public Pelicula(String peliculaNombre, String peliculaDuracion, String peliculaEdadMinima) {
         this.peliculaNombre = peliculaNombre;
         this.peliculaDuracion = peliculaDuracion;
         this.peliculaEdadMinima = peliculaEdadMinima;
     }
-    public Pelicula(int idPelicula, String peliculaNombre, String peliculaDuracion, String peliculaEdadMinima, Set funcions) {
-       this.idPelicula = idPelicula;
+    public Pelicula(String peliculaNombre, String peliculaDuracion, String peliculaEdadMinima, Set funcions) {
        this.peliculaNombre = peliculaNombre;
        this.peliculaDuracion = peliculaDuracion;
        this.peliculaEdadMinima = peliculaEdadMinima;
        this.funcions = funcions;
     }
    
-    public int getIdPelicula() {
+    public Integer getIdPelicula() {
         return this.idPelicula;
     }
     
-    public void setIdPelicula(int idPelicula) {
+    public void setIdPelicula(Integer idPelicula) {
         this.idPelicula = idPelicula;
     }
     public String getPeliculaNombre() {

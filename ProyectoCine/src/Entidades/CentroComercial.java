@@ -1,5 +1,5 @@
 package Entidades;
-// Generated 28-mar-2018 13:10:33 by Hibernate Tools 4.3.1
+// Generated 03/04/2018 16:15:58 by Hibernate Tools 4.3.1
 
 
 import java.util.HashSet;
@@ -11,7 +11,7 @@ import java.util.Set;
 public class CentroComercial  implements java.io.Serializable {
 
 
-     private int idCentroComercial;
+     private Integer idCentroComercial;
      private String centroComercialNombre;
      private Set cines = new HashSet(0);
 
@@ -19,21 +19,19 @@ public class CentroComercial  implements java.io.Serializable {
     }
 
 	
-    public CentroComercial(int idCentroComercial, String centroComercialNombre) {
-        this.idCentroComercial = idCentroComercial;
+    public CentroComercial(String centroComercialNombre) {
         this.centroComercialNombre = centroComercialNombre;
     }
-    public CentroComercial(int idCentroComercial, String centroComercialNombre, Set cines) {
-       this.idCentroComercial = idCentroComercial;
+    public CentroComercial(String centroComercialNombre, Set cines) {
        this.centroComercialNombre = centroComercialNombre;
        this.cines = cines;
     }
    
-    public int getIdCentroComercial() {
+    public Integer getIdCentroComercial() {
         return this.idCentroComercial;
     }
     
-    public void setIdCentroComercial(int idCentroComercial) {
+    public void setIdCentroComercial(Integer idCentroComercial) {
         this.idCentroComercial = idCentroComercial;
     }
     public String getCentroComercialNombre() {

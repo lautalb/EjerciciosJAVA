@@ -1,12 +1,12 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated 28-mar-2018 13:10:33 by Hibernate Tools 4.3.1 -->
+<!-- Generated 03/04/2018 16:15:59 by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
     <class name="Entidades.Funcion" table="funcion" catalog="proyectocine" optimistic-lock="version">
-        <id name="idFuncion" type="int">
+        <id name="idFuncion" type="java.lang.Integer">
             <column name="idFuncion" />
-            <generator class="assigned" />
+            <generator class="identity" />
         </id>
         <many-to-one name="pelicula" class="Entidades.Pelicula" fetch="select">
             <column name="Funcion_idPelicula" not-null="true" />

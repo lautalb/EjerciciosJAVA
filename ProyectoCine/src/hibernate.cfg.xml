@@ -43,15 +43,15 @@ Contributor(s):
   <session-factory>
     <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
     <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
-    <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/ProyectoCine?zeroDateTimeBehavior=convertToNull</property>
+    <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/proyectocine?zeroDateTimeBehavior=convertToNull</property>
     <property name="hibernate.connection.username">root</property>
-    <mapping resource="Entidades/Butaca.hbm.xml"/>
-    <mapping resource="Entidades/Cine.hbm.xml"/>
-    <mapping resource="Entidades/Pelicula.hbm.xml"/>
-    <mapping resource="Entidades/Tipo.hbm.xml"/>
-    <mapping resource="Entidades/Entrada.hbm.xml"/>
     <mapping resource="Entidades/CentroComercial.hbm.xml"/>
-    <mapping resource="Entidades/Funcion.hbm.xml"/>
+    <mapping resource="Entidades/Pelicula.hbm.xml"/>
+    <mapping resource="Entidades/Cine.hbm.xml"/>
+    <mapping resource="Entidades/Tipo.hbm.xml"/>
     <mapping resource="Entidades/Salacine.hbm.xml"/>
+    <mapping resource="Entidades/Funcion.hbm.xml"/>
+    <mapping resource="Entidades/Entrada.hbm.xml"/>
+    <mapping resource="Entidades/Butaca.hbm.xml"/>
   </session-factory>
 </hibernate-configuration>

@@ -1,5 +1,5 @@
 package Entidades;
-// Generated 28-mar-2018 13:10:33 by Hibernate Tools 4.3.1
+// Generated 03/04/2018 16:15:58 by Hibernate Tools 4.3.1
 
 
 import java.util.HashSet;
@@ -11,7 +11,7 @@ import java.util.Set;
 public class Funcion  implements java.io.Serializable {
 
 
-     private int idFuncion;
+     private Integer idFuncion;
      private Pelicula pelicula;
      private Salacine salacine;
      private Tipo tipo;
@@ -22,14 +22,12 @@ public class Funcion  implements java.io.Serializable {
     }
 
 	
-    public Funcion(int idFuncion, Pelicula pelicula, Salacine salacine, Tipo tipo) {
-        this.idFuncion = idFuncion;
+    public Funcion(Pelicula pelicula, Salacine salacine, Tipo tipo) {
         this.pelicula = pelicula;
         this.salacine = salacine;
         this.tipo = tipo;
     }
-    public Funcion(int idFuncion, Pelicula pelicula, Salacine salacine, Tipo tipo, String funcionHorario, Set entradas) {
-       this.idFuncion = idFuncion;
+    public Funcion(Pelicula pelicula, Salacine salacine, Tipo tipo, String funcionHorario, Set entradas) {
        this.pelicula = pelicula;
        this.salacine = salacine;
        this.tipo = tipo;
@@ -37,11 +35,11 @@ public class Funcion  implements java.io.Serializable {
        this.entradas = entradas;
     }
    
-    public int getIdFuncion() {
+    public Integer getIdFuncion() {
         return this.idFuncion;
     }
     
-    public void setIdFuncion(int idFuncion) {
+    public void setIdFuncion(Integer idFuncion) {
         this.idFuncion = idFuncion;
     }
     public Pelicula getPelicula() {
