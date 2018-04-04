@@ -17,7 +17,11 @@ public class CentroComercial  implements java.io.Serializable {
 
     public CentroComercial() {
     }
-
+    
+    public CentroComercial(int id)
+    {
+        this.idCentroComercial=id;
+    }
 	
     public CentroComercial(String centroComercialNombre) {
         this.centroComercialNombre = centroComercialNombre;

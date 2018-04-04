@@ -43,6 +43,8 @@ public class frmCComercial extends javax.swing.JInternalFrame {
         tbListar = new javax.swing.JTable();
         btnListar = new javax.swing.JButton();
         btnEliminar = new javax.swing.JButton();
+        lblID = new javax.swing.JLabel();
+        txfID = new javax.swing.JTextField();
 
         lblNombre.setText("Nombre:");
 
@@ -83,30 +85,35 @@ public class frmCComercial extends javax.swing.JInternalFrame {
             }
         });
 
+        lblID.setText("ID:");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(21, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 366, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18))
             .addGroup(layout.createSequentialGroup()
+                .addGap(57, 57, 57)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnAgregar)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(57, 57, 57)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnAgregar)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(lblNombre)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txfNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(50, 50, 50)
-                        .addComponent(btnListar)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnEliminar)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(lblNombre)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txfNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(153, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(50, 50, 50)
+                .addComponent(btnListar)
+                .addGap(18, 18, 18)
+                .addComponent(lblID)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(txfID)
+                .addGap(18, 18, 18)
+                .addComponent(btnEliminar)
+                .addGap(113, 113, 113))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -118,11 +125,13 @@ public class frmCComercial extends javax.swing.JInternalFrame {
                 .addGap(32, 32, 32)
                 .addComponent(btnAgregar)
                 .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 202, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 206, Short.MAX_VALUE)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnEliminar)
-                    .addComponent(btnListar))
+                    .addComponent(btnListar)
+                    .addComponent(lblID)
+                    .addComponent(txfID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(31, 31, 31))
         );
 
@@ -138,6 +147,7 @@ public class frmCComercial extends javax.swing.JInternalFrame {
         CentroComercial cc= new CentroComercial(txfNombre.getText());
         cc.setIdCentroComercial(0);
         oper.Alta(cc);
+        
     }//GEN-LAST:event_btnAgregarActionPerformed
 
     private void btnListarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnListarActionPerformed
@@ -165,6 +175,10 @@ public class frmCComercial extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_btnListarActionPerformed
 
     private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
+          CentroComercial cc= new CentroComercial(Integer.parseInt(this.txfID.getText()));
+          
+          cc.setCentroComercialNombre("");
+          oper.Baja(cc);
         
     }//GEN-LAST:event_btnEliminarActionPerformed
 
@@ -174,8 +188,10 @@ public class frmCComercial extends javax.swing.JInternalFrame {
     private javax.swing.JButton btnEliminar;
     private javax.swing.JButton btnListar;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel lblID;
     private javax.swing.JLabel lblNombre;
     private javax.swing.JTable tbListar;
+    private javax.swing.JTextField txfID;
     private javax.swing.JTextField txfNombre;
     // End of variables declaration//GEN-END:variables
 }

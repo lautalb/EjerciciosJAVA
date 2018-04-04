@@ -52,9 +52,23 @@ public class Operaciones {
         return lista;
     }
     
-    public void Baja()
+    public void Baja(Object obj)
     {
+        SessionFactory miSesion = Conexion.getSessionFactory();
         
+        Session session;
+        //abrimos la sesion
+        session=miSesion.openSession();
+        
+        Transaction tx = session.beginTransaction();
+        
+        session.delete(obj);
+        
+        tx.commit();
+        //cerramos la session
+        session.close();
+        //mostramos un mensaje para verificar
+        JOptionPane.showMessageDialog(null, "Los datos fueron borrados correctamente");
     }
-    
+
 }
