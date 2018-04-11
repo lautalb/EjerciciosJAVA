@@ -1,0 +1,42 @@
+Examen 2
+En consultas con my sql no se pone si es auto incremental, en workbench si, va 0
+esto para insertar en una base de datos llamada "canchita" en la tabla cancha
+insert into canchita.cancha (idCancha, ciudad) values(1,"Lanus");
+insert into canchita.cancha (idCancha, ciudad) values(2,"Quilmes");
+insert into canchita.cancha (idCancha, ciudad) values(3,"Avellaneda");
+
+Trae todos los datos de la base de datos "canchita" de la tabla "cancha"
+SELECT * FROM canchita.cancha;
+
+varias consultas a la vez, insertando en la tabla reserva con fecha y el id de la cancha
+INSERT INTO canchita.reserva(fecha, Cancha_idCancha) VALUES("2018-2-2",2) ("2018-3-3",1),("2018-3-3",2),("2018-3-31",1),("2018-2-20",1)
+
+en mysql para pedir fecha y ciudad que son de dos tablas distintas pero se conectan con la fk se llama asi
+SELECT r.fecha, c.ciudad 
+FROM reserva as r, cancha as c 
+WHERE r.Cancha_idCancha=c.idCancha
+
+en workbench 
+SELECT r.fecha, c.ciudad 
+FROM canchita.reserva as r, canchita.cancha as c 
+WHERE r.Cancha_idCancha=c.idCancha
+
+
+ejercicio 5 del examen 3
+
+SELECT count(*)as cantidad, c.ciudad
+FROM canchita.reserva as r, canchita.cancha as c 
+WHERE r.Cancha_idCancha=c.idCancha
+group by c.ciudad
+order by cantidad desc
+
+
+Para agregrar los 2 equipos en distintas fechas
+insert into canchita.equipo(nombre,reserva_idReserva) values("primerEquipo",1),("segundoEquipo",2),("primerEquipo",5),("segundoEquipo",4),("segundoEquipo",3)
+
+
+mostrar nombres de equipo,as fechas de las reservas y ciudad de las canchas.
+SELECT e.nombre, r.fecha, c.ciudad 
+FROM cancha as c, equipo as e, reserva as r
+where e.reserva_idReserva=r.idReserva and 
+r.Cancha_idCancha=c.idCancha
