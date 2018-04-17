@@ -1,0 +1,31 @@
+1- traer todos los empleados
+
+SELECT * FROM employees.employess
+
+2-traer empleados(nombre, apellido, departamento)
+
+SELECT e.first_name, e.last_name, d.dept_name
+FROM employees.employees as e
+inner join employees.dept_manager as de on de.emp_no = e.emp_no
+inner join  employees.departments as d on d.dept_no = de.dept_no
+
+3-empleado(nombre,apellido,salario)
+
+SELECT e.first_name, e.last_name, s.salary
+FROM employees.employees as e
+inner join employees.salaries as s on s.emp_no=e.emp_no
+
+4-empleado(nombre,apellido,salario)>7000
+
+SELECT e.first_name, e.last_name, s.salary
+FROM employees.employees as e
+inner join employees.salaries as s on s.emp_no=e.emp_no
+where s.salary > 7000
+
+5-empleado(nombre,apellido,departamento) where enginner
+
+SELECT e.first_name, e.last_name, d.dept_name
+FROM employees.employees as e, employees.departments d, employees.titles as t
+where e.emp_no = t.emp_no and t.title='Engineer'
+
+6-departamento(nombre)donde trabajan ingenieros
