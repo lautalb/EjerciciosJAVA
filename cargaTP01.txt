@@ -1,0 +1,29 @@
+Cargas: 
+
+en tabla Facultad:
+insert into testtp1.facultad (idFacultad, nombre) values (0,"Beltran"),(0,"UTN")
+
+Investigador:
+insert into testtp1.investigador (idInvestigador, nombre, apellido, Facultad_idFacultad) values (0,"Jorge","Guzman",1),(0,"Ramon","Teodoro",2),(0,"Sarah","Oconor",1)
+
+equipo:
+insert into testtp1.equipo (idEquipo, descripcion, Facultad_idFacultad) values (0,"Night",1),(0,"Rayo",2)
+
+reserva:
+insert into testtp1.reserva (idReserva, fechaInicio, fechaFin, Investigador_idInvestigador) values (0,"05-05-2018","10-05-2018",1),(0,"15-03-2018","20-03-2018",3)
+insert into testtp1.reserva (idReserva, fechaInicio, fechaFin, Investigador_idInvestigador) values (0,"10-10-2018","15-10-2018",1)
+
+detalle 
+
+Respuestas
+A: 
+select COUNT(r.idReserva), i.nombre, i.apellido 
+from investigador as i, reserva as r
+where i.idInvestigador = r.Investigador_idInvestigador
+HAVING COUNT(r.idReserva)>1
+
+B:
+SELECT i.nombre, i.apellido, f.nombre, dr.nro_Serie, e.descripcion, r.fechaInicio, r.fechaFin
+FROM reserva as r, investigador as i, facultad as f, detalle_reserva as dr, equipo as e 
+WHERE r.idReserva = i.idInvestigador
+GROUP by e.Facultad_idFacultad
