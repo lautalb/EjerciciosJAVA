@@ -1,0 +1,19 @@
+Carga del examen 1
+
+INSERT into cliente (dni, nombre, apellido, direccion) values (111,"Jose","Rodriguez","Mitre 750"),(222,"Pedro","Perez","Mitre 750"),(333,"Maria","Rodriguez","Mitre 750")
+
+INSERT INTO `orden` (`idOrden`, `creacion`, `envio`, `estado`, `Cliente_dni`) VALUES
+(1, '2018-03-03 00:00:00', '2018-03-04 00:00:00', 'Entregado', 111),
+(2, '2018-03-03 00:00:00', '2018-03-04 00:00:00', 'Entregado', 333),
+(3, '2018-03-20 00:00:00', '2018-03-22 00:00:00', 'Entregado', 222),
+(4, '2018-04-02 00:00:00', '2018-04-05 00:00:00', 'Entregado', 111);
+
+Consultas
+
+Para traer entre antes de una fecha 
+select * from orden as o
+WHERE o.envio < '2018-03-21'
+
+para traer entre 2 fechas los envios
+select * from orden as o
+WHERE o.envio BETWEEN '2018-3-21' and '2018-3-23'
