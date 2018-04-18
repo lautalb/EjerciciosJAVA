@@ -1,0 +1,40 @@
+Carga de datos Examen 2
+
+INSERT INTO `inscripcion`(`Curso_idCurso`, `Nota`, `Alumno_DNI`) VALUES (1,10,11111),(2,8,11111),(3,6,11111)
+
+INSERT INTO `inscripcion`(`Curso_idCurso`, `Nota`, `Alumno_DNI`) VALUES (1,4,22222),(2,2,22222),(3,5,22222)
+
+INSERT INTO `inscripcion`(`Curso_idCurso`, `Nota`, `Alumno_DNI`) VALUES (1,3,33333),(2,6,33333),(3,9,33333)
+
+para traer Apellido, nombre de alumno, nombre de materia y nota
+
+SELECT a.Apellido,a.Nombre,c.Nombre as "Nombre de materia",i.Nota
+FROM alumno as a, inscripcion as i, curso as c
+WHERE a.DNI=i.Alumno_DNI and c.idCurso=i.Curso_idCurso
+
+con inner join
+SELECT a.Apellido,a.Nombre,c.Nombre as "Nombre de materia",i.Nota
+FROM alumno as a
+INNER join curso as c
+INNER JOIN inscripcion as i
+WHERE a.DNI=i.Alumno_DNI and c.idCurso=i.Curso_idCurso
+
+ejercicio del examen 2 resuelto 
+
+SELECT a.Apellido,a.Nombre,a.DNI,a.Edad,c.Nombre as "Nombre de materia"
+FROM alumno as a
+INNER join curso as c
+INNER JOIN inscripcion as i
+WHERE a.DNI=i.Alumno_DNI and c.idCurso=i.Curso_idCurso and i.Nota>=7
+ORDER BY a.Apellido
+
+tambien asi
+
+SELECT a.Apellido,a.Nombre,a.DNI,a.Edad,c.Nombre as "Nombre de materia"
+FROM alumno as a
+INNER join curso as c 
+INNER JOIN inscripcion as i on i.Alumno_DNI=a.DNI and i.Curso_idCurso=c.idCurso  
+WHERE i.Nota>=7
+ORDER BY a.Apellido
+
+
