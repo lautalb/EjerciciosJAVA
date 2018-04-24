@@ -1,0 +1,164 @@
+Consultas db employeer
+2- Traer nombre, apellido y departamento donde trabaja. 
+select e.first_name, e.last_name, d.dept_name
+FROm employees as e
+inner join dept_emp as de
+INNER join departments as d on d.dept_no=de.dept_no
+
+3- Traer nombre, apellido y salario de los empleados.
+ select e.first_name, e.last_name, s.salary
+FROm employees.employees as e
+inner join employees.salaries as s
+
+4- Traer nombre, apellido y salario de los empleados que ganen mas de 7000.
+select e.first_name, e.last_name, s.salary
+FROm employees.employees as e
+inner join employees.salaries as s
+where s.salary > 7000
+
+5-Traer nombre, apellido y departamento de los empleados que sean ingenieros
+select e.first_name, e.last_name, d.dept_name
+FROm employees.employees as e
+inner join employees.departments as d
+inner join employees.titles as t on t.title="Engineer"
+
+6-Traer los departamentos donde trabajen ingenieros.
+select d.dept_name
+FROm employees.departments as d
+inner join employees.titles as t 
+inner join employees.employees as e on e.emp_no=t.emp_no
+where t.title like "Engineer"
+
+8-Traer los nombre, apellido y salario de los empleados que trabajen en el departamento
+Research
+ ponemos otra consulta despues del =
+select e.first_name, e.last_name, s.salary
+FROm employees.employees as e
+inner join employees.salaries as s
+inner join employees.dept_manager as dm on dm.dept_no=( select d.dept_no from employees.departments as d where d.dept_name="Research")
+
+o 
+
+select e.first_name, e.last_name, s.salary
+FROm employees.employees as e
+inner join employees.salaries as s on s.emp_no=e.emp_no
+inner join employees.dept_manager as dm on dm.emp_no=e.emp_no
+inner join employees.departments as d on d.dept_no=dm.dept_no
+where d.dept_name like "research"
+
+9- Listar todos los empleados que alguna vez hayan trabajado en Customer Service.
+
+select *
+from employees.employees as e
+inner join employees.dept_manager as dm on dm.dept_no=(select d.dept_no from employees.departments as d where d.dept_name="Customer Service")
+
+select *
+from employees.employees as e
+inner join employees.dept_manager as dm on dm.emp_no=e.emp_no
+inner join employees.departments as d on d.dept_no=dm.dept_no
+where d.dept_name like "customer service"
+
+
+10- Listar todos los empleados de sexo femenino que alguna vez hayan trabajado en Customer
+Service.
+
+select *
+from employees.employees as e 
+inner join employees.dept_manager as dm on dm.dept_no=(select d.dept_no from employees.departments as d where d.dept_name="Customer Service")
+where e.gender like "f"
+
+select *
+from employees.employees as e
+inner join employees.dept_manager as dm on dm.emp_no=e.emp_no
+inner join employees.departments as d on d.dept_no=dm.dept_no
+where d.dept_name like "customer service" and e.gender like "F"
+
+11- Listar todos los empleados de sexo femenino que alguna vez hayan trabajado en Customer
+Service entre en año 1985 y 1990.
+select *
+from employees.employees as e 
+inner join employees.dept_manager as dm on dm.dept_no=(select d.dept_no from employees.departments as d where d.dept_name="Customer Service")
+where e.gender like "f" and e.hire_date between '1985-1-1' and '1990-1-1' 
+
+select *
+from employees.employees as e
+inner join employees.dept_manager as dm on dm.emp_no=e.emp_no
+inner join employees.departments as d on d.dept_no=dm.dept_no
+where d.dept_name like "customer service" and e.gender like "F" and e.hire_date between '1985-1-1' and '1990-1-1' 
+
+
+12- A la consulta anterior agregarle el título del empleado.
+select *
+from employees.employees as e 
+inner join employees.titles as t
+inner join employees.dept_manager as dm on dm.dept_no=(select d.dept_no from employees.departments as d where d.dept_name="Customer Service")
+where e.gender like "f" and e.hire_date between '1985-1-1' and '1990-1-1' 
+
+select *
+from employees.employees as e
+inner join employees.titles as t on t.emp_no=e.emp_no
+inner join employees.dept_manager as dm on dm.emp_no=e.emp_no
+inner join employees.departments as d on d.dept_no=dm.dept_no
+where d.dept_name like "customer service" and e.gender like "F" and e.hire_date between '1985-1-1' and '1990-1-1' 
+
+13- Calcular la cantidad de empleadas.
+select count(*)
+from employees.employees 
+
+14- Calcular la cantidad de empleados hombres con título Senior Staff
+select count(*)
+from employees.employees as e
+inner join employees.titles as t on t.emp_no=e.emp_no 
+where e.gender like "m" and t.title like "Senior Staff"
+
+15- Calcular el promedio de sueldos
+select avg(salary) as promedio
+from employees.employees as e
+inner join employees.salaries as s on s.emp_no=e.emp_no
+
+16- Calcular el promedio de sueldos de los hombres.
+select avg(salary) as promedio
+from employees.employees as e
+inner join employees.salaries as s on s.emp_no=e.emp_no
+where e.gender like "m"
+
+
+17- Calcular el promedio de sueldos de los hombres que son ingenieros.
+select avg(salary) as promedio
+from employees.employees as e
+inner join employees.salaries as s on s.emp_no=e.emp_no
+inner join employees.titles as t on t.emp_no=e.emp_no
+where e.gender like "m" and t.title="Engineer"
+
+
+18- Calcular el promedio de sueldos de los hombres que son ingenieros y trabajan en “Finance”.
+select avg(salary) as promedio
+from employees.employees as e
+inner join employees.salaries as s on s.emp_no=e.emp_no
+inner join employees.titles as t on t.emp_no=e.emp_no 
+inner join employees.dept_emp as de on de.emp_no=e.emp_no
+inner join employees.departments as d on d.dept_no=de.dept_no
+where e.gender like "m" and t.title like "Engineer" and d.dept_name like "Finance"
+
+19- Calcular el sueldo máximo.
+select max(salary) as maximo
+from employees.employees as e
+inner join employees.salaries as s on s.emp_no=e.emp_no
+
+20- Calcular la cantidad de empleados agrupada por sexo.
+select count(gender)
+from employees.employees as e
+group by e.gender
+
+21- Calcular el sueldo máximo agrupado por sexo.
+select max(salary)
+from employees.employees as e
+inner join employees.salaries as s on s.emp_no=e.emp_no
+group by e.gender
+
+22- Calcular la cantidad de empleados por titulo.
+select count(*)
+from employees.employees as e
+inner join employees.titles as t on t.emp_no=e.emp_no
+group by title
+
