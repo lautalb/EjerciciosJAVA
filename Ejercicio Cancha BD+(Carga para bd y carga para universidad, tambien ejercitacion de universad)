@@ -1,0 +1,100 @@
+Ejercicio Cancha BD
+
+Cargas:
+Localidad: 
+insert into  Cancha.Localidad (idLocalidad,descripcion) values (1,"Quilmes"),(2,"Lanus"),(3,"Moron"),(4,"La Plata")
+
+Estadio:
+insert into Cancha.estadio(idEstadio,nombre,Localidad_idLocalidad) values (1,"Estudiantes",4),(2,"Argentinos",1),(3,"Lanus",2)
+
+Fantico:
+insert into Cancha.fanatico(idFanatico,alias,Localidad_idLocalidad) values (1,"Juan",2),(2,"Pedro",3),(3,"Maria",4),(4,"Jesus",4),(5,"Lili",1)
+
+
+Entradas vendidas:
+insert into Cancha.entradas_vendidas (idEntradas_Vendidas,fecha,Estadio_idEstadio,Fanatico_idFanatico) values(1,'2018-01-01',1,3),(2,'2018-01-02',1,3),(3,'2018-02-03',1,1),(4,'2018-03-04',2,5),(5,'2018-04-05',2,4),(6,'2018-04-10',2,1),(7,'2018-04-15',3,1),(8,'2018-06-01',3,2)
+
+
+Consulta traer el alias del fanatico, su localidad y traer el estadio con su localidad, de las entradas vendidas
+
+select f.alias as nombre, l.descripcion as localidad, e.nombre as estadio, lo.descripcion as LocalidadEstadio
+FROM fanatico as f
+inner join entradas_vendidas as ev on ev.Fanatico_idFanatico=f.idFanatico 
+inner join estadio as e on e.idEstadio=ev.Estadio_idEstadio and ev.Estadio_idEstadio=e.idEstadio
+inner join localidad as lo on lo.idLocalidad=e.Localidad_idLocalidad
+inner join localidad as l on l.idLocalidad=f.Localidad_idLocalidad
+
+1-cantidad de entradas vendidas estadios de la plata
+select count(*)
+from entradas_vendidas as ev 
+inner join estadio as e on e.idEstadio=ev.Estadio_idEstadio
+inner join localidad as l on l.idLocalidad=e.Localidad_idLocalidad
+where l.descripcion like "la plata"
+
+2- cantidad de entradas vendidas de personas de la plata
+
+select count(*)
+from entradas_vendidas as ev 
+inner join fanatico as f on f.idFanatico=ev.Fanatico_idFanatico
+inner join localidad as l on l.idLocalidad=f.Localidad_idLocalidad
+where l.descripcion like "la plata"
+
+3-que sean estadios de la plata o fanatico de la plata
+
+select count(*)
+from entradas_vendidas as ev 
+inner join fanatico as f on f.idFanatico=ev.Fanatico_idFanatico
+inner join localidad as l on l.idLocalidad=f.Localidad_idLocalidad
+inner join estadio as e on e.idEstadio=ev.Estadio_idEstadio
+inner join localidad le on le.idLocalidad=e.Localidad_idLocalidad
+where l.descripcion like "la plata" or le.descripcion like "la plata"
+
+
+
+Universidad BD
+
+
+Cargar la localidad de la base de datos de cancha y estos de abajo
+universidad
+utnfra -> avellaneda
+unla -> lanus
+unlp ->la plata
+
+profesor
+mario-> moron
+maxi->Lanus
+octavio->Quilmes
+
+alumno
+jose -> lanus
+maria -> quilmes
+jesus -> la plata
+pedro -> avellaneda
+
+universidad-profesor
+id uni profe materia
+1  1   1    programacion
+2  2   1    laboratorio
+3  3   2    matematica
+4  1   2    matematica
+5  2   2    spd
+6  2   3    spd
+
+
+alumno materia
+id   idAlumno   idUniversidadProfe
+1		1			1
+2		2			2
+3		3			3
+4		4			4
+5		1			5
+6		2			6
+7		3			6
+
+
+ejercicios de bd universidad
+1-mostrar el listado de alumnos con su localidad
+2-mostrar los profesores con las materias y la universidad donde se dan
+3-motrar cuantas materias son de un profesor o de una univerisdad de lanus
+4-mostrar la cantidad de alumnos que tienen profesores de quilmes 
+5-mostrar el profesor que dicta mas materias 
