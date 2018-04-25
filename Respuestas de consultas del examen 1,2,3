@@ -1,0 +1,44 @@
+Consulta del examen 1
+
+Dado el diagrama de entidad-relación presentado en el ejercicio anterior, escriba una consulta
+SQL que liste los números de orden (id) de todas las órdenes pertenecientes a clientes con
+apellido Rodriguez
+
+Respuesta: 
+
+selec o.idOrden
+from Orden as o
+inner join Cliente as c on c.dni=o.Cliente_dni
+where c.apellido like "Rodriguez"
+
+
+Examen 2:
+El equipo administrativo que trabaja con el director del colegio se encuentra en este momento
+contabilizando los estudiantes que, al menos, aprobaron 1 curso de los que ofrece el Programa
+111Mil en el Colegio Secundario Nº1. En su base de datos existe información de los alumnos, de
+los cursos y de las inscripciones a dichos cursos. A partir del DER del ejercicio anterior, el equipo
+necesita listar el nombre y apellido de cada alumno, con su DNI, edad y el nombre del o los
+curso/s con nota 7 ó superior. El listado debe estar ordenado alfabéticamente por el apellido del
+alumno. El equipo necesita que escribas la consulta SQL correspondiente.
+
+
+Respuesta
+SELECT a.Apellido,a.Nombre,a.DNI,a.Edad,c.Nombre as "Nombre de materia"
+FROM alumno as a
+INNER join curso as c
+INNER JOIN inscripcion as i on a.DNI=i.Alumno_DNI and c.idCurso=i.Curso_idCurso
+WHERE  i.Nota>=7
+ORDER BY a.Apellido
+
+Examen 3: 
+Los responsables del programa 111Mil desean saber cuántas reservas se han hecho por ciudad,
+ordenadas en orden decreciente. Esto les permitirá tener la información necesaria para saber si
+tienen que abrir o cerrar algunos clubes. Por favor, ayudalos a realizar la consulta SQL:
+
+respuesta:
+
+select *
+from Reserva as r
+inner join cancha as c on c.idCancha=r.Cancha_idCancha
+group by c.ciudad desc
+
