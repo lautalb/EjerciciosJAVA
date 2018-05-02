@@ -1,0 +1,10 @@
+Carga y ejercicios BD Sala De Juegos
+
+Juego:
+INSERT INTO juego (nombre, tipo) values ("MOH","FPS"),("Monkey","RPG"),("WW","Arcade"),("Pacman","Arcade"),("WOLF3D","FPS")
+
+jugador:
+insert into jugador (nombre, alias) values ("Maria","Aniquilador"),("Pepe","La muerte"),("Lautaro","El jefe"),("Lore","La master")
+
+Jugadas:
+insert into jugadas (Juego_idJuego,Jugador_idJugador,resultado) values (1,1,"Gano"),(1,2,"Perdio"),(2,3,"Empato"),(3,4,"Gano"),(4,2,"Gano"),(4,1,"Perdio")
