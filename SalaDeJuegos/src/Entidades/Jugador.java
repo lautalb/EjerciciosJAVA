@@ -5,6 +5,9 @@
  */
 package Entidades;
 
+import dao.jugadorDao;
+import java.util.ArrayList;
+
 /**
  *
  * @author alumno
@@ -45,6 +48,11 @@ public class Jugador {
     @Override
     public String toString() {
         return "Jugador{" + "id=" + id + ", nombre=" + nombre + ", alias=" + alias + '}';
+    }
+    
+    public static ArrayList<String> retornarJugador(){
+        jugadorDao playerDao= new jugadorDao();
+        return playerDao.retornarJugador();    
     }
     
     

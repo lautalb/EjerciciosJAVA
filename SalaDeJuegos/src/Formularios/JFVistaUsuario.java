@@ -5,6 +5,8 @@
  */
 package Formularios;
 
+import Entidades.Jugador;
+import java.util.ArrayList;
 import javax.swing.DefaultListModel;
 import javax.swing.JComboBox;
 import javax.swing.JList;
@@ -25,6 +27,15 @@ public class JFVistaUsuario extends javax.swing.JFrame {
     public JFVistaUsuario() {
         initComponents();
         combo=new JComboBox();
+        cbJugador.removeAllItems();
+        cbJuego.removeAllItems();
+        cbTipoDeJuego.removeAllItems();
+        
+        ArrayList <String> lista= new ArrayList<String>();
+        lista=Jugador.retornarJugador();
+        for (int i = 0; i < lista.size(); i++) {
+            cbJugador.addItem(lista.get(i));
+        }
         
         
     }
