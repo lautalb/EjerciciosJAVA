@@ -6,10 +6,13 @@
 package Formularios;
 
 import Entidades.Juego;
+import Entidades.Jugadas;
 import Entidades.Jugador;
 import Enumerados.TipoDeJuego;
 import dao.juegoDao;
 import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
 import javax.swing.DefaultListModel;
 import javax.swing.JComboBox;
 import javax.swing.JList;
@@ -40,8 +43,17 @@ public class frmVistaUsuario extends javax.swing.JInternalFrame {
     }
     
     public void cargarListadoTabla(){
-        //falta cargar tabla
+    DefaultListModel modelo = new DefaultListModel();
+    tbListado.setModel((TableModel) modelo);
+    
+        List datos=Jugadas.listarJugadas();
+        Iterator iter= datos.iterator();
         
+        while(iter.hasNext()){
+              Jugadas j= (Jugadas)iter.next();
+              
+              //modelo.addElement();
+        }
         
         
     }
