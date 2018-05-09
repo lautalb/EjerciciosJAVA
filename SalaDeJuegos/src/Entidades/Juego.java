@@ -6,6 +6,8 @@
 package Entidades;
 
 import Enumerados.TipoDeJuego;
+import dao.juegoDao;
+import java.util.ArrayList;
 
 /**
  *
@@ -51,7 +53,10 @@ public class Juego {
     public String toString() {
         return "Juego{" + "id=" + id + ", nombre=" + nombre + ", tipo=" + tipo + '}';
     }
-    
-    
+
+    public static ArrayList<String> retornarListaJuegos() {
+        juegoDao gameDao = new juegoDao();
+        return gameDao.retornarJuegos();
+    }
 
 }

@@ -6,6 +6,8 @@
 package Entidades;
 
 import Enumerados.TipoDeResultado;
+import dao.JugadasDao;
+import java.util.ArrayList;
 
 /**
  *
@@ -49,6 +51,11 @@ public class Jugadas {
     @Override
     public String toString() {
         return "Jugadas{" + "jugador=" + jugador + ", juego=" + juego + ", resultado=" + resultado + '}';
+    }
+    
+    public static ArrayList<String> listarJugadas(){
+        JugadasDao jugadas= new JugadasDao();
+        return jugadas.listarJugadas();
     }
     
     

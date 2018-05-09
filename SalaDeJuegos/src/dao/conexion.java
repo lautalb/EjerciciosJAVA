@@ -32,7 +32,7 @@ public class conexion {
             cn=DriverManager.getConnection(jdbc_url+bd, jdbc_user, jdbc_pass);
             
         } catch (Exception e) {
-            System.out.println("naaaa");
+            System.out.println(e.toString());
         }
  
     }

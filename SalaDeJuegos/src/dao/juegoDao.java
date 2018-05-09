@@ -12,17 +12,18 @@ import java.util.ArrayList;
 
 /**
  *
- * @author lauta
+ * @author alumno
  */
-public class JugadasDao {
-    public ArrayList<String> listarJugadas(){
-        ArrayList<String> lista= new ArrayList <String>();
+public class juegoDao {
+    public ArrayList<String> retornarJuegos(){
+        
+        ArrayList<String> lista = new ArrayList<String>();
         
         try {
             conexion con= new conexion();
             Connection conn= con.RetornarConeccion();
             
-            PreparedStatement ps=conn.prepareStatement("SELECT * FROM jugadas");
+            PreparedStatement ps=conn.prepareStatement("SELECT nombre FROM juego");
             ResultSet rs=ps.executeQuery();
             
             

@@ -10,7 +10,12 @@ package Enumerados;
  * @author alumno
  */
 public enum TipoDeJuego {
+    
     Arcade,
     RPG,
     FPS;
 }
+
+ 
+    
+
