@@ -1,0 +1,15 @@
+primero clonar el repositorio
+git cline "nombre del repositorio"
+
+luego se usa el git status
+git status
+
+luego para agregar lo que se modifico
+git add .
+
+luego git commit "modificion "
+
+y despues para subirlo al git hub finalmente
+git push origin master
+
+una vez subido volver a usar el git status y git add y repetir los demas.
