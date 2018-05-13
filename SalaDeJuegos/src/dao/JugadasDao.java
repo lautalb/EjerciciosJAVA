@@ -5,6 +5,8 @@
  */
 package dao;
 
+import Entidades.Juego;
+import Entidades.Jugadas;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -15,20 +17,21 @@ import java.util.ArrayList;
  * @author lauta
  */
 public class JugadasDao {
-    public ArrayList<String> listarJugadas(){
-        ArrayList<String> lista= new ArrayList <String>();
+
+    public ArrayList<Object> listarJugadas(){
+        
+        ArrayList<Object> lista = new ArrayList<Object>();
         
         try {
             conexion con= new conexion();
             Connection conn= con.RetornarConeccion();
             
-            PreparedStatement ps=conn.prepareStatement("SELECT * FROM jugadas");
+            PreparedStatement ps=conn.prepareStatement("SELECT * FROM JUGADAS");
             ResultSet rs=ps.executeQuery();
             
             
             while(rs.next()){
-                
-                lista.add(rs.getString("nombre"));
+                lista.add(new Object[] {rs.getInt("idJugadas"),rs.getInt("Jugador_idJugador"),rs.getInt("Juego_idJuego"),rs.getString("resultado ")});
             }
         } catch (Exception e) {
             System.out.println("HOLA");

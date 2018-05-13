@@ -7,6 +7,7 @@ package Entidades;
 
 import Enumerados.TipoDeResultado;
 import dao.JugadasDao;
+import java.sql.ResultSet;
 import java.util.ArrayList;
 
 /**
@@ -14,14 +15,19 @@ import java.util.ArrayList;
  * @author alumno
  */
 public class Jugadas {
+    private int id;
     private Jugador jugador;
     private Juego juego;
     private TipoDeResultado resultado;
     
-    public Jugadas(Jugador jugador, Juego juego, TipoDeResultado res){
+    public Jugadas(){
+        
+    }
+    public Jugadas(int id, Jugador jugador, Juego juego, TipoDeResultado res){
         this.jugador=jugador;
         this.juego=juego;
         this.resultado=res;
+        this.id=id;
     }
 
     public Jugador getJugador() {
@@ -48,12 +54,21 @@ public class Jugadas {
         this.resultado = resultado;
     }
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+    
+
     @Override
     public String toString() {
         return "Jugadas{" + "jugador=" + jugador + ", juego=" + juego + ", resultado=" + resultado + '}';
     }
     
-    public static ArrayList<String> listarJugadas(){
+    public static ArrayList<Object> listarJugadas(){
         JugadasDao jugadas= new JugadasDao();
         return jugadas.listarJugadas();
     }

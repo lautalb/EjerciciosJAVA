@@ -3,17 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/alumno/Downloads/EjerciciosJAVA-master/EjerciciosJAVA-master/SalaDeJuegos/src/Formularios/frmPrincipal.java</file>
-            <file>file:/C:/Users/alumno/Downloads/EjerciciosJAVA-master/EjerciciosJAVA-master/SalaDeJuegos/src/saladejuegos/SalaDeJuegos.java</file>
-            <file>file:/C:/Users/alumno/Downloads/EjerciciosJAVA-master/EjerciciosJAVA-master/SalaDeJuegos/src/Entidades/Jugador.java</file>
-            <file>file:/C:/Users/alumno/Downloads/EjerciciosJAVA-master/EjerciciosJAVA-master/SalaDeJuegos/src/dao/juegoDao.java</file>
-            <file>file:/C:/Users/alumno/Downloads/EjerciciosJAVA-master/EjerciciosJAVA-master/SalaDeJuegos/src/dao/conexion.java</file>
-            <file>file:/C:/Users/alumno/Downloads/EjerciciosJAVA-master/EjerciciosJAVA-master/SalaDeJuegos/src/Formularios/frmVistaUsuario.java</file>
-            <file>file:/C:/Users/alumno/Downloads/EjerciciosJAVA-master/EjerciciosJAVA-master/SalaDeJuegos/src/dao/JugadasDao.java</file>
-            <file>file:/C:/Users/alumno/Downloads/EjerciciosJAVA-master/EjerciciosJAVA-master/SalaDeJuegos/src/Entidades/Juego.java</file>
-            <file>file:/C:/Users/alumno/Downloads/EjerciciosJAVA-master/EjerciciosJAVA-master/SalaDeJuegos/src/Enumerados/TipoDeJuego.java</file>
-            <file>file:/C:/Users/alumno/Downloads/EjerciciosJAVA-master/EjerciciosJAVA-master/SalaDeJuegos/src/dao/jugadorDao.java</file>
-            <file>file:/C:/Users/alumno/Downloads/EjerciciosJAVA-master/EjerciciosJAVA-master/SalaDeJuegos/src/Entidades/Jugadas.java</file>
+            <file>file:/C:/Users/lauta/Documents/Programacion/EjerciciosJAVA/SalaDeJuegos/src/Formularios/JFVistaUsuario.java</file>
+            <file>file:/C:/Users/lauta/Documents/Programacion/EjerciciosJAVA/SalaDeJuegos/src/Entidades/Jugadas.java</file>
+            <file>file:/C:/Users/lauta/Documents/Programacion/EjerciciosJAVA/SalaDeJuegos/src/dao/JugadasDao.java</file>
+            <file>file:/C:/Users/lauta/Documents/Programacion/EjerciciosJAVA/SalaDeJuegos/src/saladejuegos/SalaDeJuegos.java</file>
         </group>
     </open-files>
 </project-private>

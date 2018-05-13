@@ -6,51 +6,80 @@
 package Formularios;
 
 import Entidades.Juego;
+import Entidades.Jugadas;
 import Entidades.Jugador;
+import Enumerados.TipoDeResultado;
+import dao.conexion;
 import dao.juegoDao;
+import java.sql.ResultSet;
 import java.util.ArrayList;
+import java.util.Iterator;
 import javax.swing.DefaultListModel;
 import javax.swing.JComboBox;
 import javax.swing.JList;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
  * @author alumno
  */
 public class JFVistaUsuario extends javax.swing.JFrame {
-    
-    
-    private JComboBox combo;
-    
-    
+
+    ResultSet rs;
+
     /**
      * Creates new form JFVistaUsuario
      */
     public JFVistaUsuario() {
         initComponents();
-        combo=new JComboBox();
         cbJugador.removeAllItems();
         cbJuego.removeAllItems();
         cbTipoDeJuego.removeAllItems();
-        
+
         this.cargarComboJugador();
-        
+
         this.cargarComboJuego();
-        
-        
+
+        this.cargarTablaJugadas();
     }
-    
-    public void cargarComboJugador(){
-        ArrayList <String> lista= new ArrayList<String>();
-        lista=Jugador.retornarJugador();
+
+    public void cargarTablaJugadas() {
+        DefaultTableModel modelo = new DefaultTableModel();
+        tbListado.setModel(modelo);
+
+        modelo.addColumn("IdJugada");
+        modelo.addColumn("Juego_idJuego");
+        modelo.addColumn("Jugador_idJugador");
+        modelo.addColumn("resultado");
+        
+        ArrayList<Object> lista=Jugadas.listarJugadas();
+        Iterator iter= lista.iterator();
+        
+        while(iter.hasNext()){
+            Jugadas jugada= (Jugadas)iter.next();
+            
+            Object[] fila= new Object[4];
+            fila[0]=jugada.getId();
+            fila[1]=jugada.getJuego();
+            fila[2]=jugada.getJugador();
+            fila[3]=jugada.getResultado();
+        
+        modelo.addRow(fila);
+        }
+
+    }
+
+    public void cargarComboJugador() {
+        ArrayList<String> lista = new ArrayList<String>();
+        lista = Jugador.retornarJugador();
         for (int i = 0; i < lista.size(); i++) {
             cbJugador.addItem(lista.get(i));
         }
     }
-    
-    public void cargarComboJuego(){
-        ArrayList<String> listaJuegos=new ArrayList<String>();
-        listaJuegos=Juego.retornarListaJuegos();
+
+    public void cargarComboJuego() {
+        ArrayList<String> listaJuegos = new ArrayList<String>();
+        listaJuegos = Juego.retornarListaJuegos();
         for (int i = 0; i < listaJuegos.size(); i++) {
             cbJuego.addItem(listaJuegos.get(i));
         }
@@ -195,7 +224,7 @@ public class JFVistaUsuario extends javax.swing.JFrame {
     }//GEN-LAST:event_rbtnAscActionPerformed
 
     private void cbJugadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbJugadorActionPerformed
-           
+
     }//GEN-LAST:event_cbJugadorActionPerformed
 
     /**
