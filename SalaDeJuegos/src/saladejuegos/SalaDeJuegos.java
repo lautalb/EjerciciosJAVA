@@ -12,6 +12,7 @@ import Enumerados.TipoDeJuego;
 import Enumerados.TipoDeResultado;
 import Formularios.JFVistaUsuario;
 import Formularios.frmPrincipal;
+import dao.JugadasDao;
 import dao.conexion;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -60,6 +61,13 @@ public class SalaDeJuegos {
             frmPrincipal frm= new frmPrincipal();
             frm.setVisible(true);
             
+            //JugadasDao j = new JugadasDao();
+           // ArrayList<Jugadas> lista;
+           //lista=j.listarJugadas();
+           
+           
+//            
+//         System.out.println(lista);
 //            conexion c=  new conexion();
 //            if(c.RetornarConeccion()!=null){
 //                System.out.println("exito");

@@ -17,6 +17,7 @@ import java.util.Iterator;
 import javax.swing.DefaultListModel;
 import javax.swing.JComboBox;
 import javax.swing.JList;
+import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -24,7 +25,7 @@ import javax.swing.table.DefaultTableModel;
  * @author alumno
  */
 public class JFVistaUsuario extends javax.swing.JFrame {
-
+    
     ResultSet rs;
 
     /**
@@ -35,40 +36,41 @@ public class JFVistaUsuario extends javax.swing.JFrame {
         cbJugador.removeAllItems();
         cbJuego.removeAllItems();
         cbTipoDeJuego.removeAllItems();
-
+        
         this.cargarComboJugador();
-
+        
         this.cargarComboJuego();
-
+        
         this.cargarTablaJugadas();
+        
     }
-
+    
     public void cargarTablaJugadas() {
+        
         DefaultTableModel modelo = new DefaultTableModel();
         tbListado.setModel(modelo);
-
+        
         modelo.addColumn("IdJugada");
-        modelo.addColumn("Juego_idJuego");
-        modelo.addColumn("Jugador_idJugador");
-        modelo.addColumn("resultado");
+        modelo.addColumn("IdJuego");
+        modelo.addColumn("IdJugador");
+        modelo.addColumn("Resultado");
         
-        ArrayList<Object> lista=Jugadas.listarJugadas();
-        Iterator iter= lista.iterator();
+        ArrayList<Jugadas> lista = Jugadas.listarJugadas();
+        Iterator iter = lista.iterator();
+        Object[] columnas = new Object[4];
         
-        while(iter.hasNext()){
-            Jugadas jugada= (Jugadas)iter.next();
+        while (iter.hasNext()) {
+            Jugadas j = (Jugadas) iter.next();
+            columnas[0] = j.getId();
+            columnas[1] = j.getJuego();
+            columnas[2] = j.getJugador();
+            columnas[3] = j.getResultado();
             
-            Object[] fila= new Object[4];
-            fila[0]=jugada.getId();
-            fila[1]=jugada.getJuego();
-            fila[2]=jugada.getJugador();
-            fila[3]=jugada.getResultado();
-        
-        modelo.addRow(fila);
+            modelo.addRow(columnas);
         }
-
+        
     }
-
+    
     public void cargarComboJugador() {
         ArrayList<String> lista = new ArrayList<String>();
         lista = Jugador.retornarJugador();
@@ -76,7 +78,7 @@ public class JFVistaUsuario extends javax.swing.JFrame {
             cbJugador.addItem(lista.get(i));
         }
     }
-
+    
     public void cargarComboJuego() {
         ArrayList<String> listaJuegos = new ArrayList<String>();
         listaJuegos = Juego.retornarListaJuegos();
@@ -123,6 +125,11 @@ public class JFVistaUsuario extends javax.swing.JFrame {
         cbTipoDeJuego.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         btnTraer.setText("Traer");
+        btnTraer.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnTraerActionPerformed(evt);
+            }
+        });
 
         btnGrupoResultados.add(rbtnGano);
         rbtnGano.setText("Gano");
@@ -226,6 +233,11 @@ public class JFVistaUsuario extends javax.swing.JFrame {
     private void cbJugadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbJugadorActionPerformed
 
     }//GEN-LAST:event_cbJugadorActionPerformed
+
+    private void btnTraerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTraerActionPerformed
+        
+              // TODO add your handling code here:
+    }//GEN-LAST:event_btnTraerActionPerformed
 
     /**
      * @param args the command line arguments

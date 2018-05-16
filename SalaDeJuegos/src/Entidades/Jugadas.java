@@ -16,33 +16,33 @@ import java.util.ArrayList;
  */
 public class Jugadas {
     private int id;
-    private Jugador jugador;
-    private Juego juego;
+    private String jugador;
+    private String juego;
     private TipoDeResultado resultado;
     
     public Jugadas(){
         
     }
-    public Jugadas(int id, Jugador jugador, Juego juego, TipoDeResultado res){
+    public Jugadas(int id, String jugador, String juego, TipoDeResultado res){
         this.jugador=jugador;
         this.juego=juego;
         this.resultado=res;
         this.id=id;
     }
 
-    public Jugador getJugador() {
+    public String getJugador() {
         return jugador;
     }
 
-    public void setJugador(Jugador jugador) {
+    public void setJugador(String jugador) {
         this.jugador = jugador;
     }
 
-    public Juego getJuego() {
+    public String getJuego() {
         return juego;
     }
 
-    public void setJuego(Juego juego) {
+    public void setJuego(String juego) {
         this.juego = juego;
     }
 
@@ -68,7 +68,7 @@ public class Jugadas {
         return "Jugadas{" + "jugador=" + jugador + ", juego=" + juego + ", resultado=" + resultado + '}';
     }
     
-    public static ArrayList<Object> listarJugadas(){
+    public static ArrayList<Jugadas> listarJugadas(){
         JugadasDao jugadas= new JugadasDao();
         return jugadas.listarJugadas();
     }
