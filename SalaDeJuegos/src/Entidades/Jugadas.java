@@ -15,19 +15,21 @@ import java.util.ArrayList;
  * @author alumno
  */
 public class Jugadas {
+
     private int id;
     private String jugador;
     private String juego;
     private TipoDeResultado resultado;
-    
-    public Jugadas(){
-        
+
+    public Jugadas() {
+
     }
-    public Jugadas(int id, String jugador, String juego, TipoDeResultado res){
-        this.jugador=jugador;
-        this.juego=juego;
-        this.resultado=res;
-        this.id=id;
+
+    public Jugadas(int id, String jugador, String juego, TipoDeResultado res) {
+        this.jugador = jugador;
+        this.juego = juego;
+        this.resultado = res;
+        this.id = id;
     }
 
     public String getJugador() {
@@ -61,19 +63,15 @@ public class Jugadas {
     public void setId(int id) {
         this.id = id;
     }
-    
 
     @Override
     public String toString() {
         return "Jugadas{" + "jugador=" + jugador + ", juego=" + juego + ", resultado=" + resultado + '}';
     }
-    
-    public static ArrayList<Jugadas> listarJugadas(){
-        JugadasDao jugadas= new JugadasDao();
+
+    public static ArrayList<Jugadas> listarJugadas() {
+        JugadasDao jugadas = new JugadasDao();
         return jugadas.listarJugadas();
     }
-    
-    
-    
-    
+
 }

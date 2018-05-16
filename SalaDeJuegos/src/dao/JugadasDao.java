@@ -49,7 +49,7 @@ public class JugadasDao {
                         jugada.setResultado(TipoDeResultado.Empato);
                         break;
                 }
-                
+
                 lista.add(jugada);
             }
         } catch (Exception e) {

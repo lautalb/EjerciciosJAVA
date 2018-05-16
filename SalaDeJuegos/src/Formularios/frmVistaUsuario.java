@@ -13,11 +13,11 @@ import dao.juegoDao;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
-import javax.swing.DefaultListModel;
 import javax.swing.JComboBox;
 import javax.swing.JList;
 import javax.swing.JTable;
 import javax.swing.table.TableModel;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -33,40 +33,49 @@ public class frmVistaUsuario extends javax.swing.JInternalFrame {
         cbJugador.removeAllItems();
         cbJuego.removeAllItems();
         cbTipoDeJuego.removeAllItems();
-        
-        
+
         this.cargarComboJugador();
 
         this.cargarComboJuego();
-        
+
         this.cargarComboTipoJuego();
+
+        this.cargarListadoTabla();
     }
-    
-    public void cargarListadoTabla(){
-    DefaultListModel modelo = new DefaultListModel();
-    tbListado.setModel((TableModel) modelo);
-    
-        List datos=Jugadas.listarJugadas();
-        Iterator iter= datos.iterator();
-        
-        while(iter.hasNext()){
-              Jugadas j= (Jugadas)iter.next();
-              
-              //modelo.addElement();
+
+    public void cargarListadoTabla() {
+        DefaultTableModel modelo = new DefaultTableModel();
+        tbListado.setModel(modelo);
+
+        modelo.addColumn("IdJugada");
+        modelo.addColumn("IdJuego");
+        modelo.addColumn("IdJugador");
+        modelo.addColumn("Resultado");
+
+        ArrayList<Jugadas> lista = Jugadas.listarJugadas();
+        Iterator iter = lista.iterator();
+        Object[] columnas = new Object[4];
+
+        while (iter.hasNext()) {
+            Jugadas j = (Jugadas) iter.next();
+            columnas[0] = j.getId();
+            columnas[1] = j.getJuego();
+            columnas[2] = j.getJugador();
+            columnas[3] = j.getResultado();
+
+            modelo.addRow(columnas);
         }
-        
-        
+
     }
-    
-    
-    
-    public void cargarComboTipoJuego(){
+
+    public void cargarComboTipoJuego() {
         //asi se carga un tipo de enumerados en un combo box.
-        for (TipoDeJuego  tipo: TipoDeJuego.values()) {
+        for (TipoDeJuego tipo : TipoDeJuego.values()) {
             cbTipoDeJuego.addItem(tipo.toString());
         }
-        
-    }   
+
+    }
+
     public void cargarComboJugador() {
         ArrayList<String> lista = new ArrayList<String>();
         lista = Jugador.retornarJugador();
