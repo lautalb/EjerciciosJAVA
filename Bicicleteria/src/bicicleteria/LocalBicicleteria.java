@@ -52,7 +52,7 @@ public class LocalBicicleteria {
             
             SELECT b.cantVentas, bic.nroDeSerie 
             FROM Bicicleteria as b
-            INNER JOIN Bicicleta as bic on bic.Bicicleteria_idBicicleteria
+            INNER JOIN Bicicleta as bic on bic.Bicicleteria_idBicicleteria=b.idBicicleteria
             WHERE b.idBicicleteria = 1
             ORDER BY (b.cantVentas) DESC
 
