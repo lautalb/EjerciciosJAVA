@@ -1,0 +1,95 @@
+Java O.O Teoria
+
+¿Qué es la Programación Orientada a Objetos (POO)?
+La programación orientada a objetos es un paradigma de programación y está basada en varias técnicas, incluyendo herencia, cohesión, abstracción, polimorfismo, acoplamiento y encapsulamiento.
+
+¿Qué es una clase?
+Una clase es una plantilla de la cual podemos crear mas objetos, que posee atributos, metodos y un nombre.
+
+¿Qué es un objeto o instancia?
+Un objeto es una instancia de una clase.
+
+¿Qué significa instanciar?
+Basicamente instanciar un objeto es sinonimo de "crearlo" y la instancia, comienza cuando se crea en memoria.
+
+¿Qué es un atributo de una clase?
+Un atributo de una clase es una caracteristica de la misma que la diferencia de otras clases.
+
+¿Qué significa que un atributo sea público? ¿Y privado?
+Un atributo publico significa que puede ser accedido desde cualquier clase siempre que la clase este instanciada, ahora si es un atributo privado solamente desde la clase donde esta definidido ese atributo va a poder ser accedido.
+
+¿Qué es un método?
+Es una subrutina cuyo codigo es definido en una clase, puede ser metodo de instancia o metodo estatico.
+
+¿Qué significa que un método sea público? ¿Y privado?
+Significa que si es publico el metodo puede ser llamado desde cualquier clase siempre que la clase este instanciada, si es privado solamente se puede acceder desde la clase donde esta definido.
+
+¿Qué es la herencia?
+La herencia es un mecanismo que permite la definición de una clase a partir de la definición de otra ya existente. La herencia permite compartir automáticamente métodos y datos entre clases, subclases y objetos. La herencia está fuertemente ligada a la reutilización del código
+
+¿Qué es una interfaz?
+Una interfaz en Java es una colección de métodos abstractos y propiedades constantes.
+
+En las interfaces se especifica qué se debe hacer pero no su implementación. Serán las clases que implementen estas interfaces las que describan la lógica del comportamiento de los métodos.
+
+En Java, ¿qué es un tipo primitivo?
+
+¿Qué tipos primitivos hay en Java?
+Los tipos primitivos que hay en Java son byte, short, int, long, float, double, char y boolean
+
+En Java, ¿cuál es la diferencia entre Integer y int?
+La diferencia que hay es que Integer es un tipo objeto mientras que int es un tipo primitivo.
+
+
+¿Qué es el método main()?
+Es el punto de entrada de nuestro programa.
+
+Si cambiás el nombre del método main el programa deja de ejecutarse. ¿Por qué?
+Por que al cambiar el nombre la Maquina Virtual de Java no encuentra el metodo Main y es el punto de entrada de nuestra aplicacion.
+
+La firma completa del método es public static void main(String[] args).
+¿Qué significa el public?
+Es un modificador de acceso, si es public significa que puede ser accedido desde cualquier clase.
+
+¿Qué significa el static?
+Que es un metodo estatico y no necesita ser instanciado para llamarlo.
+
+¿Qué significa el void?
+El tipo de dato que devuelve, en este caso vacio.
+
+¿Qué representa el String[] del parámetro?
+Representa que va a recibir como entrada un Array de String
+
+¿Qué es la convención "CamelCase"?
+CamelCase es un estilo de escritura que se aplica a frases o palabras compuestas. 
+
+¿Cuántas clases se escriben por archivo .java?
+
+¿Cómo se escriben las clases en Java? ¿Cómo van las mayúsculas y minúsculas?
+se escriben con la nomeclatura UpperCamelCase
+La primera letra siempre va en mayuscula en el nombre de una clase. ej Persona
+
+¿Cómo se escriben los paquetes? ¿Cómo van las  mayúsculas y minúscculas?
+Los paquetes deben ser identificadores en minuscula, separados por punto 
+
+¿Cómo se escriben los atributos? ¿Cómo van las mayúsculas y minúsculas?
+Se escriben con la nomeclatura lowerCamelCase
+Los atributos empiezan con minuscula seguido de la siguiente palabra con la primera letra en mayusuculas y seguido minuscula. ej heladoDeChocolate
+
+¿Cómo se escriben los métodos? ¿Cómo van las mayúsculas y minúsculas?
+se escriben con la nomeclatura UpperCamelCase
+
+¿Cómo se escriben los parámetros y variables? ¿Cómo van las mayúsculas y minúsculas?
+Se escriben con la nomeclatura lowerCamelCase
+
+¿Cómo se tabulan las clases y los métodos?
+
+¿Cómo se tabulan los bloques de código (como los if, for, switch, etc)?
+¿Dónde se ubican las llaves de las clases y de los métodos?
+En los métodos y los paréntesis para indicar los parámetros, ¿dónde se agrega un espacio en blanco?
+En los operadores (como if, switch, for) y los paréntesis para indicar parámetros, ¿dónde se agrega un espacio en blanco?
+
+¿Qué es el autoboxing en Java?
+
+
+¿Qué es el unboxing en Java?
